@@ -1,0 +1,265 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="border-b border-orange-500">
+<div class="bg-black py-6">
+  <div style="margin-top: 15vh;">   
+    <div class="mx-auto m-6 max-w-2xl sm:px-0 lg:grid lg:max-w-full lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+      <div class="px-8 aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3  sm:overflow-hidden sm:rounded-lg">
+        <img src="{{product.image.url}}" alt="Model wearing plain white basic tee." class="h-full w-full object-fit object-center rounded-lg" />
+      </div>
+      
+      <div class="px-8 grid grid-cols-1 gap-y-8 text-white">
+        <div class="text-xl font-bold">{{product.name}}</div>
+        <div class="text-gray-500 text-sm">{{product.description}}</div>
+        <form class="mt-0 py-4">
+          <div class="grid grid-cols-2 gap-4 mt-0">
+              <div class="flex flex-col">
+                  <label for="quantity" class="block text-sm font-medium text-gray-100">Quantity</label>
+                  <select id="qty-cart" name="quantity" class="mt-1 block w-full pl-3 pr-10 py-2 text-base text-black border-orange-500 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm rounded-md">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                  </select>
+              </div>
+              <div class="flex justify-center items-center text-orange-600">&#9733; 5 in stock</div>
+          </div>
+      
+          <div class="mt-6">
+              <label for="options" class="block text-sm font-medium text-gray-100">Options</label>
+              <div class="mt-2 flex items-center space-x-4">
+                  <div class="flex">
+                      <input type="radio" id="buy" name="options" value="buy" class="focus:ring-orange-500 h-4 w-4 text-orange-600 border-gray-300" onclick="disableElement()">
+                      <label for="buy" class="ml-2 block text-sm text-gray-100">Buy</label>
+                  </div>
+                  <div class="flex">
+                      <input type="radio" id="rent" name="options" value="rent" class="focus:ring-orange-500 h-4 w-4 text-orange-600 border-gray-300" onclick="enableElement()">
+                      <label for="rent" class="ml-2 block text-sm text-gray-100">Rent</label>
+                  </div>
+              </div>
+          </div>
+      
+          <div class="mt-6">
+              <label for="duration" class="block text-sm font-medium text-gray-100">Duration</label>
+              <select id="duration" name="duration" class="mt-1 block w-full pl-3 pr-10 py-2 text-black border-gray-300 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm rounded-md" disabled>
+                  <option value="1 week">1 week</option>
+                  <option value="2 weeks">2 weeks</option>
+                  <option value="1 month">1 month</option>
+                  <option value="3 months">3 months</option>
+                  <option value="6 months">6 months</option>
+              </select>
+          </div>
+          <div class="flex space-x-2 mt-6">
+              <button id="buyBtn" class="px-4 py-2 border border-gray-200 rounded-md hover:bg-orange-500 hover:text-white hover:border-transparent" disabled style="opacity: 0.5; cursor: not-allowed;">Buy It Now</button>
+              <button id="rentBtn" class="px-4 py-2 border border-gray-200 rounded-md hover:bg-orange-500 hover:text-white hover:border-transparent" disabled style="opacity: 0.5; cursor: not-allowed;">Rent It Now</button>
+          </div>
+          <button type="button" value="{{product.id}}" id="add_to_cart" class="mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-orange-500 px-8 py-3 text-base font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+              Add to cart
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<section class="border-b border-orange-500">
+  <div class="container mx-auto" style="padding: 5vh 5vw;">
+    <h2 class="text-2xl text-white font-bold text-left pb-6">Featured product</h2>
+    <div id="productContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8" >
+        {% for product in products %}
+        <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+            <img src="{{ product.image.url }}" alt="Product 1" class="w-full h-32 object-contain mb-4">
+            <h3 class="text-lg text-black font-semibold">{{ product.name }}</h3>
+            <p class="text-gray-600 pb-2">RS {{ product.price }}</p>
+            <a href="{% url 'product' product.id%}" class="bg-orange-500 text-white rounded-full px-4 py-2 mt-4">More Details</a>
+        </div>
+        {% endfor %}
+        <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+          <img src="{{ product.image.url }}" alt="Product 1" class="w-full h-32 object-contain mb-4">
+          <h3 class="text-lg text-black font-semibold">{{ product.name }}</h3>
+          <p class="text-gray-600 pb-2">RS {{ product.price }}</p>
+          <a href="{% url 'product' product.id%}" class="bg-orange-500 text-white rounded-full px-4 py-2 mt-4">More Details</a>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+        <img src="{{ product.image.url }}" alt="Product 1" class="w-full h-32 object-contain mb-4">
+        <h3 class="text-lg text-black font-semibold">{{ product.name }}</h3>
+        <p class="text-gray-600 pb-2">RS {{ product.price }}</p>
+        <a href="{% url 'product' product.id%}" class="bg-orange-500 text-white rounded-full px-4 py-2 mt-4">More Details</a>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+        <img src="{{ product.image.url }}" alt="Product 1" class="w-full h-32 object-contain mb-4">
+        <h3 class="text-lg text-black font-semibold">{{ product.name }}</h3>
+        <p class="text-gray-600 pb-2">RS {{ product.price }}</p>
+        <a href="{% url 'product' product.id%}" class="bg-orange-500 text-white rounded-full px-4 py-2 mt-4">More Details</a>
+      </div>
+
+    </div>
+    
+</div>
+</section>
+<!-- Refund Policy Section -->
+<section class="pt-4 px-4">
+  <div class=" mx-auto bg-black p-6 rounded shadow-md">
+      <h2 class="text-2xl text-white mb-4">Refund Policy</h2>
+      <p class="mb-4 text-gray-500 text-sm">Thank you for shopping at [Your eCommerce Website]. We value your satisfaction and strive to provide you with the best online shopping experience possible. If, for any reason, you are not completely satisfied with your purchase, we are here to help.</p>
+      <div class="">
+          <!-- Display limited content initially -->
+          <p class="hidden content-refund-policy">
+              <!-- Include truncated refund policy content here -->
+          </p>
+          <button class="text-orange-500 text-sm font-semibold underline toggle-refund-policy">Read More</button>
+      </div>
+  </div>
+</section>
+
+<!-- Privacy Policy Section -->
+<section class="pt-4 px-4">
+  <div class=" mx-auto bg-black p-6 rounded shadow-md">
+      <h2 class="text-2xl  mb-4 text-white">Privacy Policy</h2>
+      <p class="mb-4 text-sm text-gray-500">At [Your eCommerce Website], we are committed to protecting the privacy and security of our customers' personal information. This Privacy Policy outlines how we collect, use, and safeguard your information when you visit or make a purchase on our website.</p>
+      <div class=" text-sm">
+          <!-- Display limited content initially -->
+          <p class="hidden content-privacy-policy">
+              <!-- Include truncated privacy policy content here -->
+          </p>
+          <button class="text-orange-500 text-sm font-semibold underline toggle-privacy-policy">Read More</button>
+      </div>
+  </div>
+</section>
+
+<!-- Terms and Conditions Section -->
+<section class="pt-4 px-4">
+  <div class=" mx-auto bg-black p-6 rounded shadow-md">
+      <h2 class="text-2xl mb-4 text-white">Terms and Conditions</h2>
+      <p class="mb-4 text-sm text-gray-500">Welcome to [Your eCommerce Website]. These Terms and Conditions govern your use of our website and the purchase and sale of products from our platform.</p>
+      <div class=" text-sm">
+          <!-- Display limited content initially -->
+          <p class="hidden content-terms-conditions">
+              <!-- Include truncated terms and conditions content here -->
+          </p>
+          <button class="text-orange-500 text-sm font-semibold underline toggle-privacy-policy">Read More</button>
+      </div>
+  </div>
+</section>
+
+<script>
+  // Function to toggle visibility of full policy content
+  function toggleContent(buttonClass, contentClass) {
+      const buttons = document.querySelectorAll(buttonClass);
+      buttons.forEach(button => {
+          button.addEventListener('click', () => {
+              const content = button.parentNode.querySelector(contentClass);
+              content.classList.toggle('hidden');
+              if (content.classList.contains('hidden')) {
+                  button.textContent = 'Read More';
+              } else {
+                  button.textContent = 'Read Less';
+              }
+          });
+      });
+  }
+
+  // Call toggleContent function for each policy
+  toggleContent('.toggle-refund-policy', '.content-refund-policy');
+  toggleContent('.toggle-privacy-policy', '.content-privacy-policy');
+  toggleContent('.toggle-terms-conditions', '.content-terms-conditions');
+</script>
+
+
+    
+        <!-- <div class="p-4 aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
+          <h1 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">{{product.name}}</h1>
+          <p class="text-3xl tracking-tight text-gray-100">RS {{product.price}}</p>
+          <div class="space-y-6 mt-8">
+            <p class="text-base text-gray-300">The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.</p>
+          </div>
+        </div>
+        <div class="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
+          <form class="mt-10 p-4">
+            <div class="mt-6">
+                <label for="quantity" class="block text-sm font-medium text-gray-100">Quantity</label>
+                <select id="qty-cart" name="quantity" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm rounded-md">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="mt-6">
+                <label for="options" class="block text-sm font-medium text-gray-100">Options</label>
+                <div class="mt-2 flex items-center space-x-4">
+                    <div>
+                        <input type="radio" id="buy" name="options" value="buy" class="focus:ring-orange-500 h-4 w-4 text-orange-600 border-gray-300">
+                        <label for="buy" class="ml-2 block text-sm text-gray-100">Buy</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="rent" name="options" value="rent" class="focus:ring-orange-500 h-4 w-4 text-orange-600 border-gray-300">
+                        <label for="rent" class="ml-2 block text-sm text-gray-100">Rent</label>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6">
+                <label for="duration" class="block text-sm font-medium text-gray-100">Duration</label>
+                <select id="duration" name="duration" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm rounded-md">
+                    <option value="1 week">1 week</option>
+                    <option value="2 weeks">2 weeks</option>
+                    <option value="1 month">1 month</option>
+                    <option value="3 months">3 months</option>
+                    <option value="6 months">6 months</option>
+                </select>
+            </div>
+            <button type="button" value="{{product.id}}" id="add_to_cart" class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-orange-500 px-8 py-3 text-base font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                Add to cart
+            </button>
+        </form> -->
+        
+        
+      </div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+</div>
+<script>
+  function disableElement() {
+      document.getElementById("duration").disabled = true;
+      document.getElementById("buyBtn").disabled = true;
+      document.getElementById("rentBtn").disabled = true;
+  }
+
+  function enableElement() {
+      document.getElementById("duration").disabled = false;
+      document.getElementById("buyBtn").disabled = false;
+      document.getElementById("rentBtn").disabled = false;
+  }
+</script>
+<script>
+  $(document).on('click', '#add_to_cart', function(e){
+    e.preventDefault();
+    $.ajax({
+      type: 'POST',
+      url: "{% url 'cart_add' %}", // Added a missing comma here
+      data: {
+        product_id: $('#add_to_cart').val(), // Added quotes around the keys
+        product_qty: $('#qty-cart option:selected').text(),
+        csrfmiddlewaretoken: '{{ csrf_token }}', // Corrected the typo in 'csrfmiddlewaretoken'
+        action: 'post'
+      },
+  
+      success: function(json){
+        document.getElementById("cart_quantity").
+                textContent = json.qty
+      },
+      error: function(xhr, errmsg, err){ // Added a comma between xhr and errmsg
+        // Handle error here
+      }
+  
+    });
+  });
+  </script>
+  
+{% endblock %}

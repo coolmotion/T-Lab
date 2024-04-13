@@ -1,0 +1,103 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+    <title>T-Lab Studios - Audio and Video Production Studio in Sri Lanka</title>
+    <link rel="icon" type="image/png" href="img/favicon-32x32.png">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        #notificationBox {
+            animation: popUp 0.5s ease forwards, fadeOut 0.5s ease forwards 3.5s;
+            transform-origin: top right;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        @keyframes popUp {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+                visibility: hidden;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+                visibility: visible;
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+    </style>
+</head>
+
+<body class="pt-4">
+    {% include 'navbar.html' %}
+    {% if messages %}
+        {% for message in messages %}
+        <div id="notificationOverlay" class=" m-6 absolute right-0" style="margin-top: 90px;">
+            <!-- Notification Box -->
+            <div id="notificationBox" class="flex items-center bg-gray-800 p-2 rounded-lg ">
+              <p class="text-sm text-white p-2">{{message}} </p>
+
+            </div>
+          </div>
+        {% endfor %}
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+    
+    <footer>
+        <div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/tlabstudios/" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.youtube.com/@TLABPRODUCTIONS" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://instagram.com/tlabstudioslk?igshid=MzRlODBiNWFlZA==" target="_blank"><i
+                        class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <p>&copy; 2023 T-Lab Studio. Designed by <a href="https://www.coolmotion.com">CoolMotion</a></p>
+    </footer>
+    <script>
+        $(document).ready(function () {
+            $('#toggle-btn').click(function () {
+                $('#menu').slideToggle(300);
+            });
+        });
+    </script>
+    <script>
+        const animatedTextElements = document.querySelectorAll('.animated-text');
+    
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+    
+        animatedTextElements.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+    
+    </html>

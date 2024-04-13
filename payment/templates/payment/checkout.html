@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="animated-text  p-4" >
+    <h2 class="text-5xl font-bold text-white text-left mt-20">Checkout</h2>
+</div>
+    
+    
+<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+    {% if cart_products %}
+        {% for product in cart_products %}
+            <div class="flex items-center border-b border-gray-200 px-4 py-3">
+                <div class="flex-initial">
+                    <img src="{{product.image.url}}" alt="Product Image" class="w-24 h-auto">
+                </div>
+                <div class="flex-1 ml-4">
+                    <p class="text-lg font-semibold">{{ product.name }}</p>
+                    <div class="mt-6">
+                        <label for="quantity" class="block text-sm font-medium text-black">Quantity</label>
+                        <select id="qty-cart" name="quantity" class="mt-1 block w-24 pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm rounded-md">
+                           {% for key, value in quantities.items %}
+                                {% if key == product.id|slugify %}
+                            <option selected>{{value}}</option>
+                                {% endif %}
+                            {% endfor %}
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <button type="button" data-index="{{product.id}}" class="update-cart flex w-full justify-center rounded-full bg-orange-500 px-4 py-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500">Log in</button>
+
+                </div>
+                <div class="flex-initial">
+                    <p class="text-lg font-semibold">Rs {{ product.price }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="text-md font-bold text-black text-left">There is nothing in the cart</p>
+    {% endif %}
+</div>
+
+
+</div>
+{% endblock %}

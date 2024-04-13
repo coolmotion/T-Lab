@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="max-w-lg mx-auto mt-32">
+    <form method="post" class="mt-8 space-y-6">
+      {% csrf_token %}
+      <div class="rounded-md shadow-sm -space-y-px">
+        <div>
+          <label for="shipping_full_name" class="sr-only">Full Name</label>
+          <input id="shipping_full_name" name="shipping_full_name" type="text" placeholder="Full Name" class="form-input block w-full py-3 px-4 border-2 border-gray-300 placeholder-gray-400 focus:outline-none focus:border-blue-500">
+        </div>
+        <div>
+          <label for="shipping_email" class="sr-only">Email</label>
+          <input id="shipping_email" name="shipping_email" type="email" placeholder="Email" class="form-input block w-full py-3 px-4 border-2 border-gray-300 placeholder-gray-400 focus:outline-none focus:border-blue-500">
+        </div>
+        <div>
+          <label for="shipping_address1" class="sr-only">Address Line 1</label>
+          <input id="shipping_address1" name="shipping_address1" type="text" placeholder="Address Line 1" class="form-input block w-full py-3 px-4 border-2 border-gray-300 placeholder-gray-400 focus:outline-none focus:border-blue-500">
+        </div>
+        <div>
+          <label for="shipping_address2" class="sr-only">Address Line 2</label>
+          <input id="shipping_address2" name="shipping_address2" type="text" placeholder="Address Line 2" class="form-input block w-full py-3 px-4 border-2 border-gray-300 placeholder-gray-400 focus:outline-none focus:border-blue-500">
+        </div>
+        <div>
+          <label for="shipping_city" class="sr-only">City</label>
+          <input id="shipping_city" name="shipping_city" type="text" placeholder="City" class="form-input block w-full py-3 px-4 border-2 border-gray-300 placeholder-gray-400 focus:outline-none focus:border-blue-500">
+        </div>
+        <div>
+          <label for="shipping_zipcode" class="sr-only">Zip Code</label>
+          <input id="shipping_zipcode" name="shipping_zipcode" type="text" placeholder="Zip Code" class="form-input block w-full py-3 px-4 border-2 border-gray-300 placeholder-gray-400 focus:outline-none focus:border-blue-500">
+        </div>
+      </div>
+  
+      <div>
+        <button type="submit" class="w-full py-3 mt-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Submit</button>
+      </div>
+    </form>
+  </div>
+  {% endblock %}

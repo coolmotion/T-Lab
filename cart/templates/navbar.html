@@ -1,0 +1,115 @@
+{% load static %}
+<nav
+    class="fixed top-0 w-full flex items-center justify-between flex-wrap bg-black  shadow-2xl"
+    style="z-index: 500; padding: 4 10vw; height: 100px;">
+    <a href="index.html" class="px-10 flex items-center flex-shrink-0 text-orange-500 font-bold mr-6">
+      <img src="{% static 'img/Logo.jpg' %}" alt="Company Logo" class="h-16">
+    </a>
+
+    <div class=" hidden lg:flex lg:w-auto lg:items-center lg:justify-center">
+      <a href="index.html"
+        class="block mt-4 lg:inline-block lg:mt-0 text-white text-sm hover:text-white mx-4 transition-transform transform hover:scale-110">
+        Home
+      </a>
+      <a href="about.html"
+        class="block mt-4 lg:inline-block lg:mt-0 text-orange-500 text-sm hover:text-white mx-4 transition-transform transform hover:scale-110">
+        Who we are
+      </a>
+      <a href="services.html"
+        class="block mt-4 lg:inline-block lg:mt-0 text-orange-500 text-sm hover:text-white mx-4 transition-transform transform hover:scale-110">
+        Our Services
+      </a>
+      <a href="portfolio.html"
+        class="block mt-4 lg:inline-block lg:mt-0 text-orange-500 text-sm hover:text-white mx-4 transition-transform transform hover:scale-110">
+        Our Production
+      </a>
+      <a href="academy.html"
+        class="block mt-4 lg:inline-block lg:mt-0 text-orange-500 text-sm hover:text-white mx-4 transition-transform transform hover:scale-110">
+        T-Lab Academy
+      </a>
+      <a href="shop.html"
+        class="block mt-4 lg:inline-block lg:mt-0 text-orange-500 text-sm hover:text-white mx-4 transition-transform transform hover:scale-110">
+        T-Lab Shop
+      </a>
+      <a href="contact.html"
+        class="block mt-4 lg:inline-block lg:mt-0 text-orange-500 text-sm hover:text-white mx-4 transition-transform transform hover:scale-110">
+        Contact Us
+      </a>
+      {% if user.is_authenticated %}
+      <a href="{% url 'logout'%}" class="block lg:inline-block lg:mt-0 text-sm hover:text-black mx-4 transition-transform transform hover:scale-110">
+        <div class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="orange" class="h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+          </svg>
+          <span class="ml-2 text-orange-500"> <!-- Adjust ml-2 according to your desired padding -->
+            Logout
+          </span>
+        </div>
+      </a>
+          {% else %}
+      <a href="{% url 'login'%}" class="block lg:inline-block lg:mt-0 text-sm hover:text-black mx-4 transition-transform transform hover:scale-110">
+        <div class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="orange" class="h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+          </svg>
+          <span class="ml-2 text-orange-500"> <!-- Adjust ml-2 according to your desired padding -->
+            Login
+          </span>
+        </div>
+      </a>
+      {% endif %}
+      <a href="{% url 'cart_summary'%}" class="block  pr-10 lg:inline-block lg:mt-0 text-sm hover:text-black mx-4 transition-transform transform hover:scale-110">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 40 20" stroke-width="1.5" stroke="orange" class="w-8 h-8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+          <rect x="25" y="-3" width="12" height="12" rx="10" fill="orange" stroke="orange" stroke-width="1.5" />
+          <text x="27" y="8" fill="black" stroke="black" stroke-width="0.5" id="cart_quantity">{{ cart|length }}</text>
+        </svg>
+      </a>
+
+      
+      
+    
+
+    </div>
+    <div class="px-10 block lg:hidden">
+      <button id="toggle-btn"
+        class="flex items-center px-3 py-2 border rounded text-orange-500 font-bold border-orange-500">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+        </svg>
+      </button>
+    </div>
+    <div id="menu" class="w-full bg-black  flex-grow lg:hidden hidden p-3 lg:mt-0" style="width: 100vw;">
+      <div class="text-sm">
+        <a href="index.html" class="block mt-4 text-center text-white font-bold hover:text-white mx-4">
+          Home
+        </a>
+        <a href="about.html" 
+          class="block mt-4 text-center text-orange-500 font-bold hover:text-white mx-4">
+          Who We Are
+        </a>
+        <a href="services.html" class="block mt-4 text-center text-orange-500 font-bold hover:text-white mx-4">
+          Our Services
+        </a>
+        <a href="portfolio.html" class="block mt-4 text-center text-orange-500 font-bold hover:text-white mx-4">
+          Our Production
+        </a>
+        <a href="academy.html" class="block mt-4 text-center text-orange-500 font-bold hover:text-white mx-4">
+          T-Lab Academy
+        </a>
+        <a href="shop.html" 
+          class="block mt-4 text-center text-orange-500 font-bold hover:text-white mx-4">
+          T-Lab Shop
+        </a>
+        <a href="contact.html" 
+          class="block mt-4 text-center text-orange-500 font-bold hover:text-white mx-4">
+          Contact Us
+        </a>
+        <a href="{% url 'cart_summary'%}" class="block mt-4 text-center font-bold hover:text-white mx-4">
+            <i class="fas fa-envelope text-orange-500 hover:text-white"></i>
+        </a>
+        
+      </div>
+    </div>
+  </nav>
