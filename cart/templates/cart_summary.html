@@ -40,30 +40,48 @@
           </div>
           {% endfor %}
           <h2 class="text-xl font-semibold m-4 text-black"> Billing Information</h2>
-          
+          <p class="text-black text-3xl"> helo  djvb jsdv js v osjdnv kndsvlkn vdndkvn dsknkvnsd vsdkvnvk d vdsknvsd vk dvlkb zsdkndkv  dknlkdsvv  vskdnlknsb klvksdn b</p>
           {% else %}
             <p class="text-sm text-black text-left p-4">There is nothing in the cart</p>
            {% endif %}
         </div>
-        <div class="w-full md:w-1/4 bg-gray-100 rounded-xl p-4 mb-4 " style="max-height: 360px;">
+        <div class="w-full md:w-1/4 bg-gray-100 rounded-xl p-4 mb-4 " style="height: fit-content;">
           <h2 class="text-xl font-semibold m-4 text-black">Order Summary</h2>
           <div class="border border-gray-400 rounded-md p-4">
-            <div class="flex justify-between mb-2 text-gray-600">
+            <div class="flex justify-between mb-2 text-gray-900">
+              <span>Items</span>
+              <span></span>
+            </div>
+            <hr class="my-2">
+            {% for product in cart_products %}
+            <div class="flex justify-between mb-2 text-gray-600 text-xs">
+              <span>{{product.name}}
+                {% for key, value in quantities.items %}
+                {% if key == product.id|slugify %}  
+                x{{value}}
+                {% endif %}
+                {% endfor %}
+              </span>
+              <span>$99.00</span>
+            </div>
+            {% endfor %}
+            <hr class="my-2">
+            <div class="flex justify-between mb-2 text-gray-900">
               <span>Subtotal</span>
               <span>$99.00</span>
             </div>
-            <div class="flex justify-between mb-2 text-gray-600">
+            <div class="flex justify-between mb-2 text-gray-900">
               <span>Shipping</span>
               <span>Free</span>
             </div>
             <div class="flex justify-between mb-2 text-orange-500">
               <span>Discount</span>
-              <span>-$10.00</span>
+              <span>-$0.00</span>
             </div>
             <hr class="my-2">
-            <div class="flex justify-between font-semibold text-black">
+            <div class="flex justify-between font-semibold text-sm text-black">
               <span>Total</span>
-              <span>Rs ${{total}}</span>
+              <span>Rs {{total}}</span>
             </div>
             <button class="flex mt-4 w-full justify-center rounded-full bg-orange-500 px-4 py-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500">Checkout</button>
 

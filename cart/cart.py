@@ -55,7 +55,8 @@ class Cart():
         quantities = self.cart
         total = 0
         for key, value in quantities.items():
-            key == int(key)
+            key = int(key)
             for product in products:
-                total = total + (product.price*value)
+                if product.id == key:
+                    total = total + (product.price*value)
         return total
