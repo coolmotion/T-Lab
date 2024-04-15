@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block content %}
+<style>
+  .videos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  
+  .video {
+    width: 280px;
+    border-radius: 20px;
+    padding: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    background-color: #000000;
+  }
+  
+  .video a {
+    text-decoration: none;
+  }
+  
+  .video img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+  
+  .video .title {
+    font-size: 1.1rem ;
+    margin-bottom: 5px;
+    color: #ccc;
+  }
+  
+  .video .channel {
+    color: #888;
+    font-size: 0.9em;
+  }
+  
+  .video:hover {
+    border-color: #ccc;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .video .title:hover {
+    color: #333;
+  }
+  </style> 
+<section id="our-works" class="pt-10">
+  <div class="animated-text">
+    <h2 class="text-5xl font-bold text-white text-center pt-10">Our Production</h2>
+    <p class="text-gray-500 p-8 text-center" style="padding: 1vw 5vw">We've mastered the art of
+      crafting captivating TV commercials (TVCs) and producing memorable songs, showcasing our ability to blend
+      creativity and storytelling in both visual and auditory realms</p>
+  </div>
+  <section class="section border-b border-orange-500">
+  <h3 class="px-12 py-3 text-2xl font-bold text-orange-500 mb-5 text-white">Audio Productions</h3>
+  <div class="videos px-4 pb-4"></div>
+  <!--iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=z6Xt3-JLvewmlKHq&amp;list=PLc9zDvEQ-YwScqHZ96wgyFtDiQBAQhQWB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe-->
+  <script>
+    $(document).ready(function() {
+        // Replace with your actual YouTube playlist ID and API key
+        const playlistId = "PLc9zDvEQ-YwScqHZ96wgyFtDiQBAQhQWB";
+        const apiKey = "AIzaSyA9mfTcysIKWiU48uB3Rcx_tu7-VeX4WjY";
+    
+        const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&maxResults=6&order=date&key=${apiKey}`;
+    
+        $.getJSON(url, function(data) {
+            const items = data.items;
+    
+            if (items && items.length > 0) {
+                $(".videos").empty(); // Clear placeholder content
+    
+                for (let i = 0; i < items.length; i++) {
+                    const video = items[i].snippet;
+                    const videoId = video.resourceId.videoId;
+                    const thumbnailUrl = video.thumbnails.medium.url;
+                    const title = video.title;
+                    const channelTitle = video.channelTitle;
+    
+                    const videoElement = $(`<div class="video">
+                        <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank">
+                            <img src="${thumbnailUrl}" alt="${title}">
+                        </a>
+                        <div class="title">${title}</div>
+                        <div class="channel">by ${channelTitle}</div>
+                    </div>`);
+    
+                    $(".videos").append(videoElement);
+                }
+            } else {
+                console.error("No videos found");
+                // Handle no videos case (e.g., display a message)
+            }
+        }).fail(function(jqXHR, textStatus, errorThrown) {
+            console.error("Error fetching YouTube data:", errorThrown);
+            // Handle API error (e.g., display an error message)
+        });
+    });
+    </script>
+  </section>
+  <section class="section border-b border-orange-500">
+    <h3 class="px-12 py-3 text-2xl font-bold text-orange-500 mb-5 text-white">Video Productions</h3>
+    <div class="videos px-4 pb-4"></div>
+    
+    <script>
+      $(document).ready(function() {
+          // Replace with your actual YouTube playlist ID and API key
+          const playlistId = "PLc9zDvEQ-YwScqHZ96wgyFtDiQBAQhQWB";
+          const apiKey = "AIzaSyA9mfTcysIKWiU48uB3Rcx_tu7-VeX4WjY";
+      
+          const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&maxResults=6&order=date&key=${apiKey}`;
+      
+          $.getJSON(url, function(data) {
+              const items = data.items;
+      
+              if (items && items.length > 0) {
+                  $(".videos").empty(); // Clear placeholder content
+      
+                  for (let i = 0; i < items.length; i++) {
+                      const video = items[i].snippet;
+                      const videoId = video.resourceId.videoId;
+                      const thumbnailUrl = video.thumbnails.medium.url;
+                      const title = video.title;
+                      const channelTitle = video.channelTitle;
+      
+                      const videoElement = $(`<div class="video">
+                          <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank">
+                              <img src="${thumbnailUrl}" alt="${title}">
+                          </a>
+                          <div class="title">${title}</div>
+                          <div class="channel">by ${channelTitle}</div>
+                      </div>`);
+      
+                      $(".videos").append(videoElement);
+                  }
+              } else {
+                  console.error("No videos found");
+                  // Handle no videos case (e.g., display a message)
+              }
+          }).fail(function(jqXHR, textStatus, errorThrown) {
+              console.error("Error fetching YouTube data:", errorThrown);
+              // Handle API error (e.g., display an error message)
+          });
+      });
+      </script>
+    </section>
+    
+
+
+
+
+{% endblock %}

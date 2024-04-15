@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block content %}
+<section class="p-10  pt-20">
+  <h2 class="text-5xl font-bold  text-white text-center">Who we are</h2>
+  <h2 class="text-3xl font-bold  text-white text-left p-8">About T-lab</h2>
+
+  <div class="container mx-auto flex">
+    
+    <div class="flex flex-wrap container py-4">
+      <div class="w-full sm:w-full md:w-1/3 lg:w-1/3 p-4 flex justify-center">
+        <img src="{% static 'img/thusith.jpeg' %}" alt="Your Image" class="rounded-lg h-auto w-64">
+      </div>
+    
+      <div class="w-full sm:w-full md:w-2/3 lg:w-2/3 p-4 flex justify-center">
+        <p class="text-gray-500 text-m text-left p-4">
+          T-lab studios is a leading production company specializing in audio & video productions, located in Nugegoda, Sri Lanka. The company was founded in 2006 by award-winning composer and executive music director Mr. Thusith Niroshana.
+          <br> 
+          T-Lab has provided remarkable audio and video services to both national and international artists and companies throughout the past years. The company is also recognized for some of the region’s most memorable musical hits, which were composed by Mr. Thusith Niroshana in collaboration with the music group Centigradz.
+          
+          </p>
+      </div>
+    </div>
+    
+</div>
+</section>
+  <div class=" flex justify-center ">
+    <p class="text-gray-500 text-m text-center p-8">
+    </p>
+
+  </div>
+
+  <section class=" flex items-center justify-center bg-section">
+    <div class="animated-text">
+              
+      <p class="text-white text-m text-m p-8 mt-8">
+        T-Lab excels in audio and video services for national and international clients, renowned for hit collaborations with Centigradz. The company also crafts music for major brands, radio, TV, tele-dramas, films, and events, offering advanced sound recording services.        <div class="flex items-center justify-center p-4">
+          <a href="#" class="m-2 inline-block px-8 py-2 rounded-full text-white bg-red-600">Our Productions</a>
+          
+      </div>
+  </div>
+  </section>
+
+
+{% endblock %}

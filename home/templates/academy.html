@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block content %}
+<div class="animated-text">
+  <h2 class="text-5xl font-bold text-white text-center pt-20">T-Lab Academy</h2>
+</div>
+<section style="padding: 1vw 5vw;" class="border-b border-orange-500">
+<h3 class="text-2xl font-bold text-white mb-5 text-white">Our Courses</h3>
+<div id="productContainer" class="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8" >
+  <div class="bg-white p-4 rounded-lg shadow-md mb-4"><img src="{% static 'img/academey post.jpg'%}" alt="ATH-M20x Professional Headphones" class=" w-full h-32 object-contain mb-4"><h3 class="text-lg text-black font-semibold">Course Title 01</h3><p class="text-gray-600 pb-2"></p><a href="https://wa.me/+94777836315/?text=Hello%2C%20I'm%20interested%20in%20ATH-M20x%20Professional%20Headphones%20.%20Can%20you%20provide%20more%20details%3F" class="bg-orange-500 text-white rounded-full px-4 py-2 mt-4">More Details</a></div>
+  <div class=" bg-gray-200 p-4 rounded-lg shadow-md mb-4"><img src="{% static 'img/academey post.jpg'%}" alt="ATH-M20x Professional Headphones" class="transparent-background w-full h-32 object-contain mb-4"><h3 class="transparent-background text-lg text-gray-500 font-semibold">Course Title 02</h3><p class="transparent-background text-gray-600 pb-2"></p><a href="https://wa.me/+94777836315/?text=Hello%2C%20I'm%20interested%20in%20ATH-M20x%20Professional%20Headphones%20.%20Can%20you%20provide%20more%20details%3F" class="transparent-background bg-orange-500 text-white rounded-full px-4 py-2 mt-4">Coming Soon</a></div>
+</div>
+</section>
+<div>
+  <div class="flex flex-col md:flex-row" style="padding: 1vw 5vw;">
+    <!-- First Column -->
+    <div class="md:w-1/2 custom-padding px-8 py-6 bg-black">
+      <section id="composing">
+        <h3 class="text-2xl font-bold text-orange-500 mb-5 text-white">2024 New Intake</h3>
+        <p class="text-gray-500 pb-6"> Introducing T-LAB Academy's latest music production course | Ableton Live &
+          Playback Technology Learn how to make digital music the right way
+
+          </br>
+
+          . Ableton Live software simply and clearly
+
+          . Audio Recording Accurately record live sounds of voices and musical instruments
+
+          . Create songs using MIDI and leading Vsti (eg:kontakt).
+
+          . Completing a song using Audio and Midi
+
+          .Improving tone and adjusting modulation using Compressor, EQ, Pitch Correction, Reverb, and Delay effects
+          accurately.
+
+          . Using MIX and MASTER to increase the quality of the song with a good sound combination.
+
+          . Correct handling of playback technology in live performance and basic principles of live looping
+          technology.
+
+          Join us for quality and standard digital music creation.
+
+          Contact – 0776141142 | 0112 814309
+        </p>
+        <div class="flex items-center justify-center p-8">
+          <a href="https://wa.link/8m24ex"
+            class="m-2 inline-block px-8 py-2 font-semibold text-white bg-orange-500 hover:bg-red-700 rounded-full">
+            Call now</a>
+          </a>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- Second Column -->
+    <div class="md:w-1/2 custom-padding px-8 py-6 flex justify-center">
+      <div class="image-container">
+        <img src="{% static 'img/academy post.jpg'%}" alt="Mixing and Mastering Image" class="rounded-lg">
+      </div>
+    </div>
+  </div>   
+</div> 
+</section>
+<section style="padding: 1vw 5vw;" class="border-b border-orange-500">
+  <h3 class="text-2xl font-bold text-white mb-5 text-white">Our lectures</h3>
+  <div id="productContainer" class="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8" >
+    <div class="bg-black p-4 rounded-lg shadow-md mb-4">
+      <img src="{% static 'img/thusith.jpeg' %}" class="w-full h-48 object-contain mb-4" alt="Thusith Niroshana">
+      <h3 class="text-lg text-white font-semibold">Thusith Niroshana</h3>
+      <p class="text-gray-600 pb-2">Founder of T-Lab Studios / Music Producer</p>
+  </div>
+  
+  <div class="bg-black p-4 rounded-lg shadow-md mb-4">
+      <img src="{% static 'img/saliya.jpg' %}" class="w-full h-48 object-contain mb-4" alt="Saliya Illangasinghe">
+      <h3 class="text-lg text-white font-semibold">Saliya Illangasinghe</h3>
+      <p class="text-gray-600 pb-2">Guitarist / Composer / Musician at WINGS</p>
+  </div>
+    </div>
+  </section>
+
+
+{% endblock %}
