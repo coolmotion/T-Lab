@@ -324,7 +324,7 @@
 <script>
   function disableElement() {
       document.getElementById("duration").disabled = true;
-      document.getElementById("add_to_cart").disabled = true;
+      document.getElementById("add_to_cart").disabled = false;
       document.getElementById("rentBtn").disabled = true;
       // Add custom styles for disabling buyBtn and rentBtn
       document.getElementById("add_to_cart").style.opacity = "1"; // Example: reducing opacity
@@ -333,7 +333,7 @@
 
   function enableElement() {
       document.getElementById("duration").disabled = false;
-      document.getElementById("add_to_cart").disabled = false;
+      document.getElementById("add_to_cart").disabled = true;
       document.getElementById("rentBtn").disabled = false;
       // Add custom styles for enabling buyBtn and rentBtn
       document.getElementById("add_to_cart").style.opacity = "0.5"; // Example: restoring opacity
