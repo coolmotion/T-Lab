@@ -26,7 +26,7 @@ def login_user(request):
         if user is not None:
             login(request, user)
             messages.success(request, ("You have been logged in!"))
-            return redirect('home')
+            return redirect('shop')
         else:
             messages.success(request, ("There was an error. Please try again"))
     else:
@@ -36,7 +36,7 @@ def login_user(request):
 def logout_user(request):
     logout(request)
     messages.success(request, ('You have been logged out'))
-    return redirect('home')
+    return redirect('shop')
 
 
 def register_user(request):

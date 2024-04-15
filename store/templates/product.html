@@ -51,12 +51,11 @@
               </select>
           </div>
           <div class="flex space-x-2 mt-6">
-              <button id="buyBtn" class="px-4 py-2 border border-gray-200 rounded-md hover:bg-orange-500 hover:text-white hover:border-transparent" disabled style="opacity: 0.5; cursor: not-allowed;">Buy It Now</button>
-              <button id="rentBtn" class="px-4 py-2 border border-gray-200 rounded-md hover:bg-orange-500 hover:text-white hover:border-transparent" disabled style="opacity: 0.5; cursor: not-allowed;">Rent It Now</button>
-          </div>
-          <button type="button" value="{{product.id}}" id="add_to_cart" class="mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-orange-500 px-8 py-3 text-base font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            <button type="button" style="opacity: 0.5;" value="{{product.id}}" id="add_to_cart" class="mt-6 flex items-center justify-center rounded-md border border-transparent bg-orange-500 px-8 py-3 text-base font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
               Add to cart
           </button>
+          <button id="rentBtn" class="mt-6 flex items-center justify-center rounded-md border border-transparent bg-orange-500 px-8 py-3 text-base font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" style="opacity: 0.5;" >Rent It Now</button>
+          </div>
         </form>
       </div>
     </div>
@@ -98,77 +97,8 @@
     
 </div>
 </section>
-<!-- Refund Policy Section -->
-<section class="pt-4 px-4">
-  <div class=" mx-auto bg-black p-6 rounded shadow-md">
-      <h2 class="text-2xl text-white mb-4">Refund Policy</h2>
-      <p class="mb-4 text-gray-500 text-sm">Thank you for shopping at [Your eCommerce Website]. We value your satisfaction and strive to provide you with the best online shopping experience possible. If, for any reason, you are not completely satisfied with your purchase, we are here to help.</p>
-      <div class="">
-          <!-- Display limited content initially -->
-          <p class="hidden content-refund-policy">
-              <!-- Include truncated refund policy content here -->
-          </p>
-          <button class="text-orange-500 text-sm font-semibold underline toggle-refund-policy">Read More</button>
-      </div>
-  </div>
-</section>
-
-<!-- Privacy Policy Section -->
-<section class="pt-4 px-4">
-  <div class=" mx-auto bg-black p-6 rounded shadow-md">
-      <h2 class="text-2xl  mb-4 text-white">Privacy Policy</h2>
-      <p class="mb-4 text-sm text-gray-500">At [Your eCommerce Website], we are committed to protecting the privacy and security of our customers' personal information. This Privacy Policy outlines how we collect, use, and safeguard your information when you visit or make a purchase on our website.</p>
-      <div class=" text-sm">
-          <!-- Display limited content initially -->
-          <p class="hidden content-privacy-policy">
-              <!-- Include truncated privacy policy content here -->
-          </p>
-          <button class="text-orange-500 text-sm font-semibold underline toggle-privacy-policy">Read More</button>
-      </div>
-  </div>
-</section>
-
-<!-- Terms and Conditions Section -->
-<section class="pt-4 px-4">
-  <div class=" mx-auto bg-black p-6 rounded shadow-md">
-      <h2 class="text-2xl mb-4 text-white">Terms and Conditions</h2>
-      <p class="mb-4 text-sm text-gray-500">Welcome to [Your eCommerce Website]. These Terms and Conditions govern your use of our website and the purchase and sale of products from our platform.</p>
-      <div class=" text-sm">
-          <!-- Display limited content initially -->
-          <p class="hidden content-terms-conditions">
-              <!-- Include truncated terms and conditions content here -->
-          </p>
-          <button class="text-orange-500 text-sm font-semibold underline toggle-privacy-policy">Read More</button>
-      </div>
-  </div>
-</section>
-
-<script>
-  // Function to toggle visibility of full policy content
-  function toggleContent(buttonClass, contentClass) {
-      const buttons = document.querySelectorAll(buttonClass);
-      buttons.forEach(button => {
-          button.addEventListener('click', () => {
-              const content = button.parentNode.querySelector(contentClass);
-              content.classList.toggle('hidden');
-              if (content.classList.contains('hidden')) {
-                  button.textContent = 'Read More';
-              } else {
-                  button.textContent = 'Read Less';
-              }
-          });
-      });
-  }
-
-  // Call toggleContent function for each policy
-  toggleContent('.toggle-refund-policy', '.content-refund-policy');
-  toggleContent('.toggle-privacy-policy', '.content-privacy-policy');
-  toggleContent('.toggle-terms-conditions', '.content-terms-conditions');
-</script>
-
-
-    
-        <!-- <div class="p-4 aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
+<section>
+  <!-- <div class="p-4 aspect-h-2 aspect-w-3 overflow-hidden rounded-lg">
           <h1 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">{{product.name}}</h1>
           <p class="text-3xl tracking-tight text-gray-100">RS {{product.price}}</p>
           <div class="space-y-6 mt-8">
@@ -213,30 +143,204 @@
             <button type="button" value="{{product.id}}" id="add_to_cart" class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-orange-500 px-8 py-3 text-base font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                 Add to cart
             </button>
-        </form> -->
-        
-        
-      </div>
-        </div>
-      </div>
-      
-    </div>
+          </form>
+        </div-->
+</section>
+<!-- Refund Policy Section -->
+<section class="pt-4 px-4">
+  <div class=" mx-auto bg-black p-6 rounded shadow-md">
+      <h2 class="text-2xl text-white mb-4">Refund Policy</h2>
+      <p class="mb-4 text-gray-500 text-sm">Thank you for shopping at [Your eCommerce Website]. We value your satisfaction and strive to provide you with the best online shopping experience possible. If, for any reason, you are not completely satisfied with your purchase, we are here to help.</p>
+      <div class="">
+          <!-- Display limited content initially -->
+          <div class="hidden content-refund-policy text-gray-500 text-xs">
+            <p>At [Your eCommerce Website], we are committed to protecting the privacy and security of our customers' personal information. This Privacy Policy outlines how we collect, use, and safeguard your information when you visit or make a purchase on our website. By using our website, you consent to the practices described in this policy.</p>
 
-    
-</div>
+            <h2>Information We Collect</h2>
+            <p>When you visit our website, we may collect certain information about you, including:</p>
+            <ul>
+              <li>Personal identification information (such as your name, email address, and phone number) provided voluntarily by you during the registration or checkout process.</li>
+              <li>Payment and billing information necessary to process your orders, including credit card details, which are securely handled by trusted third-party payment processors.</li>
+              <li>Browsing information, such as your IP address, browser type, and device information, collected automatically using cookies and similar technologies.</li>
+            </ul>
+          
+            <h2>Use of Information</h2>
+            <p>We may use the collected information for the following purposes:</p>
+            <ul>
+              <li>To process and fulfill your orders, including shipping and delivery.</li>
+              <li>To communicate with you regarding your purchases, provide customer support, and respond to inquiries or requests.</li>
+              <li>To personalize your shopping experience and present relevant product recommendations and promotions.</li>
+              <li>To improve our website, products, and services based on your feedback and browsing patterns.</li>
+              <li>To detect and prevent fraud, unauthorized activities, and abuse of our website.</li>
+            </ul>
+          
+            <h2>Information Sharing</h2>
+            <p>We respect your privacy and do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except in the following circumstances:</p>
+            <ul>
+              <li>Trusted service providers: We may share your information with third-party service providers who assist us in operating our website, processing payments, and delivering products. These providers are contractually obligated to handle your data securely and confidentially.</li>
+              <li>Legal requirements: We may disclose your information if required to do so by law or in response to valid legal requests or orders.</li>
+            </ul>
+          
+            <h2>Data Security</h2>
+            <p>We implement industry-standard security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. However, please be aware that no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+          
+            <h2>Cookies and Tracking Technologies</h2>
+            <p>We use cookies and similar technologies to enhance your browsing experience, analyze website traffic, and gather information about your preferences and interactions with our website. You have the option to disable cookies through your browser settings, but this may limit certain features and functionality of our website.</p>
+          
+            <h2>Changes to the Privacy Policy</h2>
+            <p>We reserve the right to update or modify this Privacy Policy at any time. Any changes will be posted on this page with a revised "last updated" date. We encourage you to review this Privacy Policy periodically to stay informed about how we collect, use, and protect your information.</p>
+          
+            <h2>Contact Us</h2>
+            <p>If you have any questions, concerns, or requests regarding our Privacy Policy or the handling of your personal information, please contact us using the information provided on our website.</p>
+          
+            <p><em>(Note: This sample Privacy Policy is provided as a general guideline.)</em></p>
+          </div>
+          <button class="text-orange-500 text-sm font-semibold underline toggle-refund-policy">Read More</button>
+      </div>
+  </div>
+</section>
+
+<!-- Privacy Policy Section -->
+<section class="pt-4 px-4">
+  <div class=" mx-auto bg-black p-6 rounded shadow-md">
+      <h2 class="text-2xl  mb-4 text-white">Privacy Policy</h2>
+      <p class="mb-4 text-sm text-gray-500">At [Your eCommerce Website], we are committed to protecting the privacy and security of our customers' personal information. This Privacy Policy outlines how we collect, use, and safeguard your information when you visit or make a purchase on our website.</p>
+      <div class=" text-sm">
+          <!-- Display limited content initially -->
+          <div class="hidden content-privacy-policy text-gray-500 text-xs">
+            <p>Welcome to [Your eCommerce Website]. These Terms and Conditions govern your use of our website and the purchase and sale of products from our platform. By accessing and using our website, you agree to comply with these terms. Please read them carefully before proceeding with any transactions.</p>
+        
+            <h2>Use of the Website</h2>
+            <p>a. You must be at least [X] years old to use our website or make purchases.</p>
+            <p>b. You are responsible for maintaining the confidentiality of your account information, including your username and password.</p>
+            <p>c. You agree to provide accurate and current information during the registration and checkout process.</p>
+            <p>d. You may not use our website for any unlawful or unauthorized purposes.</p>
+        
+            <h2>Product Information and Pricing</h2>
+            <p>a. We strive to provide accurate product descriptions, images, and pricing information. However, we do not guarantee the accuracy or completeness of such information.</p>
+            <p>b. Prices are subject to change without notice. Any promotions or discounts are valid for a limited time and may be subject to additional terms and conditions.</p>
+        
+            <h2>Orders and Payments</h2>
+            <p>a. By placing an order on our website, you are making an offer to purchase the selected products.</p>
+            <p>b. We reserve the right to refuse or cancel any order for any reason, including but not limited to product availability, errors in pricing or product information, or suspected fraudulent activity.</p>
+            <p>c. You agree to provide valid and up-to-date payment information and authorize us to charge the total order amount, including applicable taxes and shipping fees, to your chosen payment method.</p>
+            <p>d. We use trusted third-party payment processors to handle your payment information securely. We do not store or have access to your full payment details.</p>
+        
+            <h2>Shipping and Delivery</h2>
+            <p>a. We will make reasonable efforts to ensure timely shipping and delivery of your orders.</p>
+            <p>b. Shipping and delivery times provided are estimates and may vary based on your location and other factors.</p>
+        
+            <h2>Returns and Refunds</h2>
+            <p>a. Our Returns and Refund Policy governs the process and conditions for returning products and seeking refunds. Please refer to the policy provided on our website for more information.</p>
+        
+            <h2>Intellectual Property</h2>
+            <p>a. All content and materials on our website, including but not limited to text, images, logos, and graphics, are protected by intellectual property rights and are the property of [Your eCommerce Website] or its licensors.</p>
+            <p>b. You may not use, reproduce, distribute, or modify any content from our website without our prior written consent.</p>
+        
+            <h2>Limitation of Liability</h2>
+            <p>a. In no event shall [Your eCommerce Website], its directors, employees, or affiliates be liable for any direct, indirect, incidental, special, or consequential damages arising out of or in connection with your use of our website or the purchase and use of our products.</p>
+            <p>b. We make no warranties or representations, express or implied, regarding the quality, accuracy, or suitability of the products offered on our website.</p>
+        
+            <h2>Amendments and Termination</h2>
+            <p>We reserve the right to modify, update, or terminate these Terms and Conditions at any time without prior notice. It is your responsibility to review these terms periodically for any changes.</p>
+        
+            <p><em>(Note: This sample Terms & Conditions document is provided as a general guideline.)</em></p>
+        </div>
+        
+          <button class="text-orange-500 text-sm font-semibold underline toggle-privacy-policy">Read More</button>
+      </div>
+  </div>
+</section>
+
+<!-- Terms and Conditions Section -->
+<section class="pt-4 px-4">
+  <div class=" mx-auto bg-black p-6 rounded shadow-md">
+      <h2 class="text-2xl mb-4 text-white">Terms and Conditions</h2>
+      <p class="mb-4 text-sm text-gray-500">Welcome to [Your eCommerce Website]. These Terms and Conditions govern your use of our website and the purchase and sale of products from our platform.</p>
+      <div class=" text-sm">
+          <!-- Display limited content initially -->
+          <div class="hidden content-terms-conditions text-gray-500 text-xs">
+            <p>Thank you for shopping at [Your eCommerce Website]. We value your satisfaction and strive to provide you with the best online shopping experience possible. If, for any reason, you are not completely satisfied with your purchase, we are here to help.</p>
+        
+            <h2>Returns</h2>
+            <p>We accept returns within [X] days from the date of purchase. To be eligible for a return, your item must be unused and in the same condition that you received it. It must also be in the original packaging.</p>
+        
+            <h2>Refunds</h2>
+            <p>Once we receive your return and inspect the item, we will notify you of the status of your refund. If your return is approved, we will initiate a refund to your original method of payment. Please note that the refund amount will exclude any shipping charges incurred during the initial purchase.</p>
+        
+            <h2>Exchanges</h2>
+            <p>If you would like to exchange your item for a different size, color, or style, please contact our customer support team within [X] days of receiving your order. We will provide you with further instructions on how to proceed with the exchange.</p>
+        
+            <h2>Non-Returnable Items</h2>
+            <p>Certain items are non-returnable and non-refundable. These include:</p>
+            <ul>
+                <li>Gift cards</li>
+                <li>Downloadable software products</li>
+                <li>Personalized or custom-made items</li>
+                <li>Perishable goods</li>
+            </ul>
+        
+            <h2>Damaged or Defective Items</h2>
+            <p>In the unfortunate event that your item arrives damaged or defective, please contact us immediately. We will arrange for a replacement or issue a refund, depending on your preference and product availability.</p>
+        
+            <h2>Return Shipping</h2>
+            <p>You will be responsible for paying the shipping costs for returning your item unless the return is due to our error (e.g., wrong item shipped, defective product). In such cases, we will provide you with a prepaid shipping label.</p>
+        
+            <h2>Processing Time</h2>
+            <p>Refunds and exchanges will be processed within [X] business days after we receive your returned item. Please note that it may take additional time for the refund to appear in your account, depending on your payment provider.</p>
+        
+            <h2>Contact Us</h2>
+            <p>If you have any questions or concerns regarding our refund policy, please contact our customer support team. We are here to assist you and ensure your shopping experience with us is enjoyable and hassle-free.</p>
+        
+            <p><em>(Note: This sample Refund Policy is provided as a general guideline.)</em></p>
+        </div>
+          <button class="text-orange-500 text-sm font-semibold underline toggle-terms-conditions">Read More</button>
+      </div>
+  </div>
+</section>
+
+<script>
+  // Function to toggle visibility of full policy content
+  function toggleContent(buttonClass, contentClass) {
+      const buttons = document.querySelectorAll(buttonClass);
+      buttons.forEach(button => {
+          button.addEventListener('click', () => {
+              const content = button.parentNode.querySelector(contentClass);
+              content.classList.toggle('hidden');
+              if (content.classList.contains('hidden')) {
+                  button.textContent = 'Read More';
+              } else {
+                  button.textContent = 'Read Less';
+              }
+          });
+      });
+  }
+
+  // Call toggleContent function for each policy
+  toggleContent('.toggle-refund-policy', '.content-refund-policy');
+  toggleContent('.toggle-privacy-policy', '.content-privacy-policy');
+  toggleContent('.toggle-terms-conditions', '.content-terms-conditions');
+</script>
 <script>
   function disableElement() {
       document.getElementById("duration").disabled = true;
-      document.getElementById("buyBtn").disabled = true;
+      document.getElementById("add_to_cart").disabled = true;
       document.getElementById("rentBtn").disabled = true;
+      // Add custom styles for disabling buyBtn and rentBtn
+      document.getElementById("add_to_cart").style.opacity = "1"; // Example: reducing opacity
+      document.getElementById("rentBtn").style.opacity = "0.5";
   }
 
   function enableElement() {
       document.getElementById("duration").disabled = false;
-      document.getElementById("buyBtn").disabled = false;
+      document.getElementById("add_to_cart").disabled = false;
       document.getElementById("rentBtn").disabled = false;
+      // Add custom styles for enabling buyBtn and rentBtn
+      document.getElementById("add_to_cart").style.opacity = "0.5"; // Example: restoring opacity
+      document.getElementById("rentBtn").style.opacity = "1";
   }
 </script>
+
 <script>
   $(document).on('click', '#add_to_cart', function(e){
     e.preventDefault();

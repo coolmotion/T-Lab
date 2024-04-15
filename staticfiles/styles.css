@@ -1,0 +1,569 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+  background-color: black;
+  font-family: 'Poppins', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.custom-large-icon {
+  font-size: 4em;
+  /* Adjust the font size to make the icon larger */
+  padding: 10px;
+}
+
+h1 {
+  color: white;
+}
+
+h3 {
+  color: white;
+  font-size: 25px;
+}
+
+.centertext {
+  padding-left: 10vw;
+  padding-right: 10vw;
+  padding-bottom: 5vh;
+  text-align: center;
+}
+
+.righttext {
+  padding-left: 10vw;
+  padding-right: 10vw;
+  padding-bottom: 5vh;
+  text-align: left !important;
+
+}
+
+.gradient-bg {
+  background: black;
+  /* Replace with your desired gradient colors */
+  padding: 20px;
+  /* Add padding to see the effect */
+  color: white;
+  /* Set text color to contrast with the background */
+}
+
+.custom-padding {
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+/* Keyframes for the fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/*Card Layout*/
+.cards {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+/* Media query for mobile devices (adjust max-width as needed) */
+@media (max-width: 767px) {
+  .cards {
+    flex-direction: column;
+    /* Change to column layout for mobile */
+  }
+}
+
+.cards .red {
+  background-color: rgb(0, 0, 0);
+}
+
+.cards .blue {
+  background-color: rgb(0, 0, 0);
+}
+
+.cards .green {
+  background-color: rgb(0, 0, 0);
+}
+
+.cards .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: 400ms;
+
+  @media (max-width: 767px) {
+    .cards .card {
+      flex-direction: row !important;
+    }
+  }
+}
+
+.cards .card p.tip {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.cards .card p.second-text {
+  font-size: .7em;
+}
+
+.cards .card:hover {
+  transform: scale(1.2, 1.2);
+}
+
+.cards:hover>.card:not(:hover) {
+  filter: blur(10px);
+  transform: scale(0.9, 0.9);
+}
+
+/* Footer styles */
+footer {
+  background-color: #222;
+  color: #F0F3F4;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.footer-social {
+  margin-top: 20px;
+}
+
+.footer-social a {
+  display: inline-block;
+  margin: 0 10px;
+  color: #F97316;
+  font-size: 1.5rem;
+}
+
+.footer-social a:hover {
+  color: #E65100;
+}
+
+/* Copyright text */
+footer p {
+  margin-top: 20px;
+  font-size: 0.8rem;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.logo img {
+  max-height: 45px;
+}
+
+.logo span {
+  font-size: 1.5rem;
+}
+
+.learn-more-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #FF5733;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.learn-more-button,
+.learn-more-button:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.learn-more-button:hover {
+  background-color: #E65100;
+}
+
+
+.rows {
+  margin: 10px -16px;
+}
+
+
+
+/*Form*/
+.form-container {
+
+  background: linear-gradient(#000000, #000000) padding-box,
+    linear-gradient(145deg, transparent 10%, #ffffff, #f97316) border-box;
+  border: 2px solid transparent;
+  padding: 32px 24px;
+  font-size: 14px;
+  font-family: inherit;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  background-size: 200% 100%;
+  animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.form-container button:active {
+  scale: 0.95;
+}
+
+.form-container .form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-container .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.form-container .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.form-container .form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: #fff;
+  font-family: inherit;
+  background-color: transparent;
+  border: 1px solid #414141;
+}
+
+.form-container .form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  resize: none;
+  color: #fff;
+  height: 96px;
+  border: 1px solid #414141;
+  background-color: transparent;
+  font-family: inherit;
+}
+
+.form-container .form-group input::placeholder {
+  opacity: 0.5;
+}
+
+.form-container .form-group input:focus {
+  outline: none;
+  border-color: #F97316;
+}
+
+.form-container .form-group textarea:focus {
+  outline: none;
+  border-color: #F97316;
+}
+
+.form-container .form-submit-btn {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: flex-start;
+  font-family: inherit;
+  color: #ffffff;
+  font-weight: 600;
+  width: 40%;
+  background: #F97316;
+  padding: 12px 16px;
+  font-size: inherit;
+  gap: 8px;
+  margin-top: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.form-container .form-submit-btn:hover {
+  background-color: #f974169f;
+  border-color: #f974169f;
+}
+
+/*Animations*/
+.animated-text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animated-text.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  opacity: 1;
+  /* Initially visible */
+  z-index: 9999;
+  /* Ensure it's on top of other content */
+  animation: fadeIn 0s forwards, slideUp1 1s forwards 2s;
+  /* Fade in and then fade out */
+}
+
+.logo {
+  max-width: 100%;
+  height: auto;
+  animation: fadeIn 1s;
+}
+
+.content {
+  /* Adjust styles for your content */
+  padding: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideUp1 {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+/*scard*/
+.scard {
+  position: relative;
+  margin: 20px;
+  margin-top: 50px;
+  width: 190px;
+  height: 254px;
+  background-color: #000;
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+}
+
+.scard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -5px;
+  margin: auto;
+  width: 200px;
+  height: 264px;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #fb923c 0%, #b91c1c 100%);
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.scard::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #fb923c 0%, #b91c1c 100%);
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.heading {
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.scard p:not(.heading) {
+  font-size: 14px;
+}
+
+.scard p:last-child {
+  color: #e81cff;
+  font-weight: 600;
+}
+
+.scard:hover::after {
+  filter: blur(30px);
+}
+
+.scard:hover::before {
+  transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
+}
+
+/*Double Heading*/
+.double-heading {
+  display: flex;
+  flex-direction: row;
+}
+
+.double-heading h1 {
+  margin-right: 10px;
+}
+
+/*portfoilio banner*/
+.bg-section {
+  background-image: url(img/img01.png);
+  /* Replace 'your-background-image.jpg' with your actual image path */
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  background-attachment: fixed;
+}
+
+/*Top client*/
+.client-section {
+  background-color: black;
+  /* Set your desired background color */
+}
+
+.client-logo {
+  max-width: 150px !important;
+  /* Adjust the maximum width of the client logos */
+  margin: 0 auto;
+  /* Center the logos horizontally */
+  border-radius: 10px;
+}
+
+.p-logo {
+  max-width: 300px !important;
+  /* Adjust the maximum width of the client logos */
+  margin: 0 auto;
+  /* Center the logos horizontally */
+  border-radius: 300px;
+}
+
+/*Animations*/
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-inn {
+  animation: fadeIn 1s 2s ease-in-out;
+  /* Run the fade-in animation once */
+}
+
+.bg-pulse {
+  animation: pulse 2s 1s 1;
+}
+
+.logo-container {
+  padding: 0;
+  /* Set the desired padding for the logo container */
+}
+
+.v-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+  /* 16:9 aspect ratio */
+}
+
+.v-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 8px 16px;
+}
+
+/* Style for the selected tab */
+.tab.selected {
+  background-color: #f97316; /* Change to your desired background color */
+  color: #fff; /* Change to your desired text color */
+  border-radius: 20px;
+}
+.transparent-background {
+  opacity: 0.5;
+}
+
+/*Orange*/
+.text-orange-500{
+  color: #f97316;
+}
+
+.bgorange{
+  background-color: #f97316;
+}
