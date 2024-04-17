@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+<script type="text/javascript" src="https://www.payhere.lk/lib/payhere.js"></script>
+<button type="submit" id="payhere-payment" class="text-white text-3xl mt-16" >PayHere Pay</button>
+<script>
+    // Payment completed. It can be a successful failure.
+    payhere.onCompleted = function onCompleted(orderId) {
+        console.log("Payment completed. OrderID:" + orderId);
+        // Note: validate the payment and show success or failure page to the customer
+    };
+
+    // Payment window closed
+    payhere.onDismissed = function onDismissed() {
+        // Note: Prompt user to pay again or show an error page
+        console.log("Payment dismissed");
+    };
+
+    // Error occurred
+    payhere.onError = function onError(error) {
+        // Note: show an error page
+        console.log("Error:"  + error);
+    };
+
+    // Put the payment variables here
+    var payment = {
+        "sandbox": {{ payment_data.sandbox|yesno:"true,false" }},
+            "merchant_id": "{{ payment_data.merchant_id }}",
+            "return_url": "{{ payment_data.return_url }}",
+            "cancel_url": "{{ payment_data.cancel_url }}",
+            "notify_url": "{{ payment_data.notify_url }}",
+            "order_id": "{{ payment_data.order_id }}",
+            "items": "{{ payment_data.items }}",
+            "amount": "{{ payment_data.amount }}",
+            "currency": "{{ payment_data.currency }}",
+            "hash": "{{ payment_data.hash }}",
+            "first_name": "{{ payment_data.first_name }}",
+            "last_name": "{{ payment_data.last_name }}",
+            "email": "{{ payment_data.email }}",
+            "phone": "{{ payment_data.phone }}",
+            "address": "{{ payment_data.address }}",
+            "city": "{{ payment_data.city }}",
+            "country": "{{ payment_data.country }}",
+            "delivery_address": "{{ payment_data.delivery_address }}",
+            "delivery_city": "{{ payment_data.delivery_city }}",
+            "delivery_country": "{{ payment_data.delivery_country }}",
+            "custom_1": "{{ payment_data.custom_1 }}",
+            "custom_2": "{{ payment_data.custom_2 }}"
+    };
+
+    // Show the payhere.js popup, when "PayHere Pay" is clicked
+    document.getElementById('payhere-payment').onclick = function (e) {
+        payhere.startPayment(payment);
+    };
+</script>
+{% endblock %}
