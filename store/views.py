@@ -10,7 +10,7 @@ from .forms import SignUpForm, UpdateUserForm
 
 def home(request):
     products = Product.objects.all()
-    return render(request, 'home.html', {"products": products})
+    return render(request, 'home.html', {"products": products, 'active_page': 'shop'})
 
 
 def product(request, pk):
