@@ -50,7 +50,7 @@ def register_user(request):
             user = authenticate(username=username, password=password)
             login(request, user)
             messages.success(request, "You have signed-up successfully!")
-            return redirect('home')
+            return redirect('shop')
         else:
             messages.success(request, "Oops! There was a problem registering")
     return render(request, 'register.html', {'form': form})
@@ -66,7 +66,7 @@ def update_user(request):
 
             login(request, current_user)
             messages.success(request, "User Has Been Updated!!")
-            return redirect('home')
+            return redirect('shop')
         return render(request, "update.html", {'user_form': user_form})
     else:
         messages.success(
