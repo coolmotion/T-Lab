@@ -62,19 +62,19 @@
             {% for product in cart_products %}
             <div class="flex justify-between mb-2 text-gray-600 text-xs">
               <span>{{product.name}}
-                {% for key, value in quantities.items %}
-                {% if key == product.id|slugify %}  
-                x{{value}}
-                {% endif %}
-                {% endfor %}
+
               </span>
-              <span>$99.00</span>
+              <span class="inline-block">{% for key, value in quantities.items %}
+                {% if key == product.id|slugify %}  
+                {{value}} X
+                {% endif %}
+                {% endfor %}Rs{{product.price}}</span>
             </div>
             {% endfor %}
             <hr class="my-2">
             <div class="flex justify-between mb-2 text-gray-900">
               <span>Subtotal</span>
-              <span>$99.00</span>
+              <span>Rs {{total}}</span>
             </div>
             <div class="flex justify-between mb-2 text-gray-900">
               <span>Shipping</span>

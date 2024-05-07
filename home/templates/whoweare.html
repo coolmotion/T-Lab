@@ -2,33 +2,48 @@
 {% load static%}
 {% block content %}
 <section class="p-10  pt-20">
-  <h2 class="text-5xl font-bold  text-white text-center">Who we are</h2>
-  <h2 class="text-3xl font-bold  text-white text-left p-8">About T-lab</h2>
+  <h2 class="text-4xl font-bold  text-white text-center lg:pr-8">Who we are</h2>
 
   <div class="container mx-auto flex">
     
-    <div class="flex flex-wrap container py-4">
+    <div class="flex flex-wrap container py-2">
       <div class="w-full sm:w-full md:w-1/3 lg:w-1/3 p-4 flex justify-center">
-        <img src="{% static 'img/thusith.jpeg' %}" alt="Your Image" class="rounded-lg h-auto w-64">
+        <img src="{% static 'img/Logo.jpg' %}" alt="Your Image" class="rounded-lg h-auto w-64">
       </div>
     
-      <div class="w-full sm:w-full md:w-2/3 lg:w-2/3 p-4 flex justify-center">
-        <p class="text-gray-500 text-m text-left p-4">
-          T-lab studios is a leading production company specializing in audio & video productions, located in Nugegoda, Sri Lanka. The company was founded in 2006 by award-winning composer and executive music director Mr. Thusith Niroshana.
-          <br> 
-          T-Lab has provided remarkable audio and video services to both national and international artists and companies throughout the past years. The company is also recognized for some of the region’s most memorable musical hits, which were composed by Mr. Thusith Niroshana in collaboration with the music group Centigradz.
-          
+      <div class="w-full sm:w-full md:w-2/3 lg:w-2/3 p-4 flex justify-center pt-10 lg:pl-16">
+        <p class="text-gray-500 text-m text-left p-4 ">
+          T-lab studios is a leading production company specializing in audio, video and graphic productions, located in Nugegoda, Colombo ,Sri Lanka. The company was founded in 2006 by award-winning composer and executive music director Mr. Thusith Niroshana.
+                   <br> 
+                   T-Lab studios has been providing remarkable audio and video services to both national and international artists and companies throughout the past years. The company is also renowned for some of the region’s most memorable musical hits, which were composed by Mr. Thusith Niroshana in collaboration with the music band Centigradz. 
           </p>
+          
       </div>
     </div>
     
 </div>
 </section>
-  <div class=" flex justify-center ">
-    <p class="text-gray-500 text-m text-center p-8">
-    </p>
-
+<section style="padding: 1vw 5vw;" class="border-b border-orange-500">
+  <h3 class="text-2xl font-bold text-white mb-5 text-white">Meet our team</h3>
+  <div id="productContainer" class="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8" >
+    <div class="bg-black p-4 rounded-lg shadow-md mb-4">
+      <img src="{% static 'img/Thusith.jpeg' %}" class="w-full h-48 object-contain mb-4" alt="Thusith Niroshana">
+      <h3 class="text-lg text-white font-semibold">Thusith Niroshana</h3>
+      <p class="text-gray-600 pb-2">Founder of T-Lab Studios / Music Producer</p>
   </div>
+  
+  <div class="bg-black p-4 rounded-lg shadow-md mb-4">
+      <img src="{% static 'img/madush.jpeg' %}" class="w-full h-48 object-contain mb-4" alt="Saliya Illangasinghe">
+      <h3 class="text-lg text-white font-semibold">Madush Savinda</h3>
+      <p class="text-gray-600 pb-2">Recording Engineer / Composer</p>
+  </div>
+  <div class="bg-black p-4 rounded-lg shadow-md mb-4">
+    <img src="{% static 'img/chothira.jpeg' %}" class="w-full h-48 object-contain mb-4" alt="Saliya Illangasinghe">
+    <h3 class="text-lg text-white font-semibold">Chothira Shanka</h3>
+    <p class="text-gray-600 pb-2">Video Director</p>
+</div>
+    </div>
+  </section>
 
   <section class=" flex items-center justify-center bg-section">
     <div class="animated-text">
