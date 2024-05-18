@@ -2,96 +2,142 @@
 {% load static%}
 {% block content %}
 <div class="animated-text">
-  <h2 class="text-5xl font-bold text-white text-center pt-20">Services</h2>
+  <h2 class="text-5xl font-bold text-white text-center pt-20 pb-10">Services</h2>
 </div>
 <div>
-  <div class="flex flex-col md:flex-row" style="padding: 5vw;">
+  <div class="flex flex-col md:flex-row border-b border-orange-500" style="padding:0 5vw;">
     <!-- First Column -->
-    <div class="md:w-1/2 custom-padding px-8 py-6 bg-black">
-      <section id="composing">
-        <h3 class="text-2xl font-bold text-orange-500 mb-5 text-white">Trusted audio recording services</h3>
-        <p class="text-gray-500 pb-6">T-lab production house is the proud home to 2 state-of–the-art sound recording
-          studios which are managed by professional team of sound engineers and composers. There is also a department
-          with inclusive professional technological equipment’s for facilities such as high quality audio recordings,
-          sound designing ,music compositions. Other audio recording services that are offered by T-lab include
-          voice-over recordings, Film/ Tele-drama dubbing, solo music instrument recordings, sound effects recordings
-          plus many other audio recording services.
+    <div class="animated-text md:w-1/2 custom-padding px-8 py-6 bg-black">
+      <section id="composing" class="">
+        <h3 class="text-2xl font-bold text-gray-200 mb-5 ">Trusted audio recording services</h3>
+        <p class="text-gray-500 pb-6">T-lab production house is the proud home to 2 state-of–the-art sound recording studios which are managed by a professional team of sound engineers.
         </p>
+        <div class="py-3">
+          <ul class="list-disc list-inside space-y-2">
+            <li class="bg-zinc-950 rounded-xl text-sm text-gray-300 px-4 py-2 bullet-orange-500">
+              Voice Artiste & Solo music instrument recordings
+            </li>
+            <li class="bg-zinc-950 rounded-xl text-sm text-gray-300 px-4 py-2 bullet-orange-500">
+              Voice-over recordings for TV / Radio / Film / Documentaries
+            </li>
+            <li class="bg-zinc-950 rounded-xl text-sm text-gray-300 px-4 py-2 bullet-orange-500">
+              Professional IVR Voice Prompt Recordings (Telephone prompt)
+            </li>
+            <li class="bg-zinc-950 rounded-xl text-sm text-gray-300 px-4 py-2 bullet-orange-500">
+              Film / Tele-drama dubbing
+            </li>
+            <li class="bg-zinc-950 rounded-xl text-sm text-gray-300 px-4 py-2 bullet-orange-500">
+              Foley Sound effects Recordings            </li>
+          </ul>
+        </div>
         <div class="flex items-center justify-center p-8">
           <a href="https://wa.link/3spd48"
-            class="m-2 inline-block px-8 py-2 font-semibold text-white bg-orange-500 hover:bg-red-700 rounded-full">
+            class="m-2 inline-block px-8 py-2 font-semibold text-white bg-orange-600 hover:bg-orange-700 rounded-3xl">
             Book now</a>
           </a>
-
         </div>
       </section>
     </div>
 
     <!-- Second Column -->
-    <div class="md:w-1/2 custom-padding px-8 py-6 flex justify-center">
+    <div class=" animated-text flex-col md:w-1/2 custom-padding px-8 py-6 flex justify-center">
       <div class="image-container">
-        <img src="{% static 'img/hbanner.jpg' %}" alt="Music Composing Image" class="rounded-lg ">
+        <img src="{% static 'img/recording.png' %}" alt="Music Composing Image" class="rounded-lg ">
       </div>
     </div>
   </div>
 </div>
-<div class="flex flex-col md:flex-row" style="padding: 5vw;">
+<div class="flex flex-col md:flex-row border-b border-orange-500" style="padding:0 5vw;">
   <!-- First Column -->
-  <div class="md:w-1/2 custom-padding px-8 py-6 bg-black">
+  <div class=" animated-text:w-1/2 custom-padding px-8 py-6 bg-black">
     <section id="mixing">
       <div class="animated-text">
-        <h3 class="text-2xl font-bold text-orange-500 mb-5 text-white">Music composing services</h3>
-        <p class="text-gray-500 pb-6">T-lab offers a wide range of services for music composing and sound designing
-          for solo artists as well as groups. Furthermore, the company also offers a variety of services for
-          Tele-dramas and films such as composing theme songs , film scores and overall music directing. Moreover,
-          T-lab also composes theme songs for nation’s popular reality TV occasions and events plus many other music
-          composing services.</p>
-        <div class="flex items-center justify-center p-8">
-          <a href="https://wa.link/3spd48"
-            class="m-2 inline-block px-8 py-2 font-semibold text-white bg-orange-500 hover:bg-red-700 rounded-full">
-            Book now</a>
-          </a>
-
-        </div>
+        <h3 class="text-2xl font-bold text-gray-200 mb-5">Music composing services</h3>
+        <p class="text-gray-500 pb-6">T-lab offers a wide range of services for music composing and sound designing services.</p>
+        <div class="py-3">
+          <ul class="list-disc list-inside space-y-2">
+            <li class="bg-zinc-950 rounded-xl text-sm text-gray-300 px-4 py-2 bullet-orange-500">
+              TV & Radio Commercial & Jingle Soundtrack Production            </li>
+            <li class="bg-zinc-950 rounded-xl text-sm text-gray-300 px-4 py-2 bullet-orange-500">
+              Original Song production for Solo Artiste / Group
+            </li>
+            <li class="bg-zinc-950 rounded-xl text-sm text-gray-300 px-4 py-2 bullet-orange-500">
+              Cover Song Production
+            </li>
+            <li class="bg-zinc-950 rounded-xl text-sm text-gray-300 px-4 py-2 bullet-orange-500">
+              Theme song Production for Film / Teledrama / Company
+            </li>
+            <li class="bg-zinc-950 rounded-xl text-sm text-gray-300 px-4 py-2 bullet-orange-500">
+              Music Scoring and Composition for Film / Teledrama
+            </li>
+            <li class="bg-zinc-950 rounded-xl text-sm text-gray-300 px-4 py-2 bullet-orange-500">
+              Station ID Sound track production for TV / Radio
+            </li>
+          </ul>
+        </div>        
+        
+      </div>
+      <div class="flex items-center justify-center p-8">
+        <a href="https://wa.link/3spd48"
+          class="m-2 inline-block px-8 py-2 font-semibold text-white bg-orange-600 hover:bg-orange-700 rounded-3xl">
+          Book now</a>
+        </a>
       </div>
     </section>
   </div>
 
   <!-- Second Column -->
-  <div class="md:w-1/2 custom-padding px-8 py-6 flex justify-center">
+  <div class="animated-text flex flex-col md:w-1/2 custom-padding px-8 py-6 flex justify-center">
     <div class="animated-text">
       <div class="image-container">
-        <img src="{% static 'img/img2.webp' %}"  alt="Mixing and Mastering Image" class="rounded-lg">
+        <img src="{% static 'img/mixing.png' %}"  alt="Mixing and Mastering Image" class="rounded-lg">
       </div>
     </div>
+    
   </div>
 </div>
 
-<div class="flex flex-col md:flex-row" style="padding: 5vw;">
+<div class="flex flex-col md:flex-row border-b border-orange-500" style="padding:0 5vw;">
   <!-- First Column -->
-  <div class="md:w-1/2 custom-padding px-8 py-6 bg-black">
+  <div class="animated-text md:w-1/2 custom-padding px-8 py-6 bg-black">
     <section id="production">
       <div class="animated-text">
-        <h3 class="text-2xl font-bold text-orange-500 mb-5 text-white">Video production services</h3>
-        <p class="text-gray-500 pb-6">T-lab production house not only offers a variety of services for audio
-          productions but, we also offer a variety of services for video productions. These services include producing
-          Video commercials, Films , Tele dramas , Documentaries Audio/Video presentations, Music videos and any other
-          video production services.</p>
-        <div class="flex items-center justify-center p-8">
-          <a href="https://wa.link/3spd48"
-            class="m-2 inline-block px-8 py-2 font-semibold text-white bg-orange-500 hover:bg-red-700 rounded-full">
-            Book now</a>
-          </a>
-        </div>
+        <h3 class="text-2xl font-bold text-gray-200 mb-5 ">Video production services</h3>
+        <p class="text-gray-500 pb-6">T-lab production house not only offers a variety of services for audio productions but, we also offer a variety of services for video productions. </p>
+        <div class="py-3">
+          <ul class="list-disc list-inside space-y-2">
+            <li class="bg-zinc-950 rounded-xl text-sm text-gray-300 px-4 py-2 bullet-orange-500">
+              Video commercials
+            </li>
+            <li class="bg-zinc-950 rounded-xl text-sm text-gray-300 px-4 py-2 bullet-orange-500">
+              Music videos
+            </li>
+            <li class="bg-zinc-950 rounded-xl text-sm text-gray-300 px-4 py-2 bullet-orange-500">
+              Films / Tele dramas
+            </li>
+            <li class="bg-zinc-950 rounded-xl text-sm text-gray-300 px-4 py-2 bullet-orange-500">
+              Documentaries
+            </li>
+            <li class="bg-zinc-950 rounded-xl text-sm text-gray-300 px-4 py-2 bullet-orange-500">
+              Company profile presentations
+            </li>
+          </ul>
+        </div>        
+      </div>
+      <div class="flex items-center justify-center p-8">
+        <a href="https://wa.link/3spd48"
+          class="m-2 inline-block px-8 py-2 font-semibold text-white bg-orange-600 hover:bg-orange-700 rounded-3xl">
+          Book now</a>
+        </a>
       </div>
     </section>
   </div>
 
   <!-- Second Column -->
-  <div class="md:w-1/2 custom-padding px-8 py-6 flex justify-center">
+  <div class="animated-text flex flex-col md:w-1/2 custom-padding px-8 py-6 flex justify-center">
     <div class="animated-text">
       <div class="image-container">
-        <img src="{% static 'img/img3.jpeg' %}" alt="Video Production Image" class="rounded-lg">
+        <img src="{% static 'img/video.png' %}" alt="Video Production Image" class="rounded-lg">
       </div>
     </div>
   </div>
