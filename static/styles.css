@@ -66,8 +66,8 @@ h3 {
 
 /*Card Layout*/
 .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  display: flex;
+  flex-direction: row;
   gap: 15px;
 }
 
@@ -101,7 +101,6 @@ h3 {
   border-radius: 10px;
   color: white;
   cursor: pointer;
-  width: 100px !important;
   transition: 400ms;
 
   @media (max-width: 767px) {
