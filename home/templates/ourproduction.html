@@ -57,97 +57,69 @@
       creativity and storytelling in both visual and auditory realms</p>
   </div>
   <section class="section border-b border-orange-500">
-    <h3 class="px-12 py-3 text-2xl font-bold text-orange-500 mb-5 text-white">TV Commercials</h3>
-  <div class="videos px-4 pb-4"></div>
-  <!--iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=z6Xt3-JLvewmlKHq&amp;list=PLc9zDvEQ-YwScqHZ96wgyFtDiQBAQhQWB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe-->
-  <script>
-    $(document).ready(function() {
-        // Replace with your actual YouTube playlist ID and API key
-        const playlistId = "PLc9zDvEQ-YwScqHZ96wgyFtDiQBAQhQWB";
-        const apiKey = "AIzaSyA9mfTcysIKWiU48uB3Rcx_tu7-VeX4WjY";
-    
-        const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&maxResults=6&order=date&key=${apiKey}`;
-    
-        $.getJSON(url, function(data) {
-            const items = data.items;
-    
-            if (items && items.length > 0) {
-                $(".videos").empty(); // Clear placeholder content
-    
-                for (let i = 0; i < items.length; i++) {
-                    const video = items[i].snippet;
-                    const videoId = video.resourceId.videoId;
-                    const thumbnailUrl = video.thumbnails.medium.url;
-                    const title = video.title;
-                    const channelTitle = video.channelTitle;
-    
-                    const videoElement = $(`<div class="video">
-                        <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank">
-                            <img src="${thumbnailUrl}" alt="${title}">
-                        </a>
-                        <div class="title">${title}</div>
-                        <div class="channel">by ${channelTitle}</div>
-                    </div>`);
-    
-                    $(".videos").append(videoElement);
-                }
-            } else {
-                console.error("No videos found");
-                // Handle no videos case (e.g., display a message)
-            }
-        }).fail(function(jqXHR, textStatus, errorThrown) {
-            console.error("Error fetching YouTube data:", errorThrown);
-            // Handle API error (e.g., display an error message)
-        });
-    });
-    </script>
+    <h3 class="px-14 py-3 text-2xl font-bold text-orange-500 mb-5 text-white">TV Commercials</h3>
+    <div class="container mx-auto p-4 px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 my-2 mx-8">
+          <div class=" flex-col bg-zinc-950 shadow-md rounded-lg p-4 flex ">
+            <iframe src="https://www.youtube.com/embed/eAPcXyJyi9U?si=ntJvAsfuStRKgDpz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+             <h2 class="text-xs text-gray-300 mt-4 font-bold">Arjun x Piyal - Oye Ojaye (Official Music Video)</h2>
+             <P class="text-xs text-gray-500 mb-2">Music Production - Thusith Niroshana | T-Lab Studios </P>
+          </div>
+          <div class=" flex-col bg-zinc-950 shadow-md rounded-lg p-4 flex ">
+            <iframe src="https://www.youtube.com/embed/9asbrzM24jA?si=FU2xNLLuKp4P7LjE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h2 class="text-xs text-gray-300 mt-4">Mal Mal Sariya (මල් මල් සාරිය) | by Sandalindu Duggannarala (Official Lyric Video)</h2>
+            <P class="text-xs text-gray-500 mb-2">Music composed & Mix by : Thusith Niroshana | T-Lab Studios</P>
+          </div>
+          <div class=" flex-col bg-zinc-950 shadow-md rounded-lg p-4 flex ">
+            <iframe src="https://www.youtube.com/embed/9fGMxM92fQY?si=MWiI3cG-wBTXhbn1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" class="items-center justify-center" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h2 class="text-xs text-gray-300 mt-2">Sindagana (සිදඟන) Manjula Pushpakumara | Official Music Video | Sinhala Songs</h2>
+            <P class="text-xs text-gray-500 mb-2">Music - Thusith Niroshana | T-Lab Studios </P>
+          </div>
+          <div class=" flex-col bg-zinc-950 shadow-md rounded-lg p-4 flex ">
+            <iframe src="https://www.youtube.com/embed/daItj81IDMs?si=x6uLv0k0XCkvoTbw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h2 class="text-xs text-gray-300 mt-2">Sindagana (සිදඟන) Manjula Pushpakumara | Official Music Video | Sinhala Songs</h2>
+            <P class="text-xs text-gray-500 mb-2">Remix by - Thusith Niroshana | T-Lab Studios  </P>
+          </div>
+          <div class=" flex-col bg-zinc-950 shadow-md rounded-lg p-4 items-center ">
+            <h2 class="text-xs text-gray-300 m-2">Click here to watch our all of TV Commercials</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?si=ULjFnvoT6MSAjaap&amp;list=PLc9zDvEQ-YwScqHZ96wgyFtDiQBAQhQWB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+      </div>
+  </div>
+  
   </section>
   <section class="section border-b border-orange-500">
-    <h3 class="px-12 py-3 text-2xl font-bold text-orange-500 mb-5 text-white">Original Song</h3>
-    <div class="videos px-4 pb-4"></div>
-    
-    <script>
-      $(document).ready(function() {
-          // Replace with your actual YouTube playlist ID and API key
-          const playlistId = "PLc9zDvEQ-YwScqHZ96wgyFtDiQBAQhQWB";
-          const apiKey = "AIzaSyA9mfTcysIKWiU48uB3Rcx_tu7-VeX4WjY";
-      
-          const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlistId}&maxResults=6&order=date&key=${apiKey}`;
-      
-          $.getJSON(url, function(data) {
-              const items = data.items;
-      
-              if (items && items.length > 0) {
-                  $(".videos").empty(); // Clear placeholder content
-      
-                  for (let i = 0; i < items.length; i++) {
-                      const video = items[i].snippet;
-                      const videoId = video.resourceId.videoId;
-                      const thumbnailUrl = video.thumbnails.medium.url;
-                      const title = video.title;
-                      const channelTitle = video.channelTitle;
-      
-                      const videoElement = $(`<div class="video">
-                          <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank">
-                              <img src="${thumbnailUrl}" alt="${title}">
-                          </a>
-                          <div class="title">${title}</div>
-                          <div class="channel">by ${channelTitle}</div>
-                      </div>`);
-      
-                      $(".videos").append(videoElement);
-                  }
-              } else {
-                  console.error("No videos found");
-                  // Handle no videos case (e.g., display a message)
-              }
-          }).fail(function(jqXHR, textStatus, errorThrown) {
-              console.error("Error fetching YouTube data:", errorThrown);
-              // Handle API error (e.g., display an error message)
-          });
-      });
-      </script>
-    </section>
+    <h3 class="px-14 py-3 text-2xl font-bold text-orange-500 mt-3 mb-5 text-white">Original Songs</h3>
+    <div class="container mx-auto p-4 px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 my-2 mx-8">
+          <div class=" flex-col bg-zinc-950 shadow-md rounded-lg p-4 flex ">
+            <iframe src="https://www.youtube.com/embed/eAPcXyJyi9U?si=ntJvAsfuStRKgDpz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+             <h2 class="text-xs text-gray-300 mt-4 font-bold">Arjun x Piyal - Oye Ojaye (Official Music Video)</h2>
+             <P class="text-xs text-gray-500 mb-2">Music Production - Thusith Niroshana | T-Lab Studios </P>
+          </div>
+          <div class=" flex-col bg-zinc-950 shadow-md rounded-lg p-4 flex ">
+            <iframe src="https://www.youtube.com/embed/9asbrzM24jA?si=FU2xNLLuKp4P7LjE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h2 class="text-xs text-gray-300 mt-4">Mal Mal Sariya (මල් මල් සාරිය) | by Sandalindu Duggannarala (Official Lyric Video)</h2>
+            <P class="text-xs text-gray-500 mb-2">Music composed & Mix by : Thusith Niroshana | T-Lab Studios</P>
+          </div>
+          <div class=" flex-col bg-zinc-950 shadow-md rounded-lg p-4 flex ">
+            <iframe src="https://www.youtube.com/embed/9fGMxM92fQY?si=MWiI3cG-wBTXhbn1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" class="items-center justify-center" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h2 class="text-xs text-gray-300 mt-2">Sindagana (සිදඟන) Manjula Pushpakumara | Official Music Video | Sinhala Songs</h2>
+            <P class="text-xs text-gray-500 mb-2">Music - Thusith Niroshana | T-Lab Studios </P>
+          </div>
+          <div class=" flex-col bg-zinc-950 shadow-md rounded-lg p-4 flex ">
+            <iframe src="https://www.youtube.com/embed/daItj81IDMs?si=x6uLv0k0XCkvoTbw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h2 class="text-xs text-gray-300 mt-2">Sindagana (සිදඟන) Manjula Pushpakumara | Official Music Video | Sinhala Songs</h2>
+            <P class="text-xs text-gray-500 mb-2">Remix by - Thusith Niroshana | T-Lab Studios  </P>
+          </div>
+          <div class=" flex-col bg-zinc-950 shadow-md rounded-lg p-4 items-center ">
+            <h2 class="text-xs text-gray-300 m-2">Click here to watch our all of TV Commercials</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?si=ULjFnvoT6MSAjaap&amp;list=PLc9zDvEQ-YwScqHZ96wgyFtDiQBAQhQWB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+      </div>
+  </div>
+  
+  </section>
     
 
 

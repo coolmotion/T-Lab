@@ -11,14 +11,14 @@
 <div class="container mx-auto" style="padding: 5vh 5vw;">
     <div class="flex flex-col sm:flex-row items-center justify-between p-4">
         <div id="productTabs" class="flex flex-wrap sm:space-x-4 text-white mb-4 sm:mb-0">
-            <div class="tab cursor-pointer" onclick="filterProducts('all')">All Products</div>
+            <div class="tab cursor-pointer bg-orange-500 text-white rounded-full px-4 py-2" onclick="filterProducts('all')">All Products</div>
             <div class="tab cursor-pointer" onclick="filterProducts('audio')">Audio</div>
             <div class="tab cursor-pointer" onclick="filterProducts('video')">Video </div>
         </div>
     
-        <div class="flex items-center">
-            <input id="searchInput" type="text" placeholder="Search..." class="px-2 py-1 border border-gray-300 rounded-md focus:outline-none mb-2 sm:mb-0">
-            <button id="searchButton" class="ml-2 px-4 py-1 bg-orange-500 text-white rounded-md">Search</button>
+        <div class="flex items-center mx-4 ">
+            <input id="searchInput" type="text" placeholder="Search..." class="mx-3 px-2 py-1 border border-gray-300 rounded-3xl focus:outline-none mb-2 sm:mb-0">
+            <button id="searchButton" class="ml-2 px-4 py-1 bg-orange-500 text-white rounded-3xl">Search</button>
         </div>
         <datalist id="searchPredictions">
             <!-- Dynamically populated options based on your data or predefined suggestions -->
@@ -29,11 +29,13 @@
     
     <div id="productContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8" >
         {% for product in products %}
-        <div class="bg-white p-4 rounded-lg shadow-md mb-4">
+        <div class="bg-zinc-950 p-4 rounded-lg shadow-md mb-4">
+            <div class="w-full bg-white rounded-xl">
             <img src="{{ product.image.url }}" alt="Product 1" class="w-full h-32 object-contain mb-4">
-            <h3 class="text-lg text-black font-semibold">{{ product.name }}</h3>
-            <p class="text-gray-600 pb-2">RS {{ product.price }}</p>
-            <a href="{% url 'product' product.id%}" class="bg-orange-500 text-white rounded-full px-4 py-2 mt-4">More Details</a>
+            </div>
+            <h3 class="text-md text-gray-200 ">{{ product.name }}</h3>
+            <p class="text-orange-200 px-2 text-sm mt-4 pb-4">RS {{ product.price }}</p>
+            <a href="{% url 'product' product.id%}" class=" bg-orange-500 text-white text-sm rounded-full px-4 py-2 mt-4">More Details</a>
         </div>
         {% endfor %}
     </div>
