@@ -1,79 +1,82 @@
 {% load static %}
 <nav
-    class="fixed top-0 w-full flex items-center justify-between flex-wrap bg-black  shadow-2xl"
+    class="fixed top-0 w-full flex items-center justify-between flex-wrap bg-black"
     style="z-index: 500; padding: 4 10vw; height: 100px;">
     <a href="index.html" class="px-10 flex items-center flex-shrink-0 text-orange-500 font-bold mr-6">
       <img src="{% static 'img/Logo.jpg' %}" alt="Company Logo" class="h-16">
     </a>
-
-    <div class=" hidden lg:flex lg:w-auto lg:items-center lg:justify-center text-orange-500">
-        <a href="{% url 'index' %}"
-        class="block mt-4 lg:inline-block lg:mt-0 {% if active_page == 'index' %}text-white {% endif %} text-sm hover:text-white mx-4 transition-transform transform hover:scale-110 ">
-        Home
-        </a>
-        <a href="{% url 'whoweare' %}"
-            class="block mt-4 lg:inline-block lg:mt-0 {% if active_page == 'whoweare' %}text-white {% endif %} text-sm hover:text-white mx-4 transition-transform transform hover:scale-110 ">
-            Who we are
-        </a>
-        <a href="{% url 'ourservices' %}"
-            class="block mt-4 lg:inline-block lg:mt-0 {% if active_page == 'ourservices' %}text-white {% endif %} text-sm hover:text-white mx-4 transition-transform transform hover:scale-110 ">
-            Our Services
-        </a>
-        <a href="{% url 'ourproduction' %}"
-            class="block mt-4 lg:inline-block lg:mt-0 {% if active_page == 'ourproduction' %}text-white {% endif %} text-sm hover:text-white mx-4 transition-transform transform hover:scale-110 ">
-            Our Production
-        </a>
-        <a href="{% url 'academy' %}"
-            class="block mt-4 lg:inline-block lg:mt-0 {% if active_page == 'academy' %}text-white {% endif %} text-sm hover:text-white mx-4 transition-transform transform hover:scale-110 ">
-            T-Lab Academy
-        </a>
-        <a href="{% url 'shop' %}" 
-            class="block mt-4 lg:inline-block lg:mt-0 {% if active_page == 'cart' %}text-white {% endif %} text-sm hover:text-white mx-4 transition-transform transform hover:scale-110 ">
-            T-Lab Shop
-        </a>
-        <a href="{% url 'contact' %}"
-            class="block mt-4 lg:inline-block lg:mt-0 {% if active_page == 'contact' %}text-white {% endif %} text-sm hover:text-white mx-4 transition-transform transform hover:scale-110 ">
-            Contact Us
-        </a>
-      {% if user.is_authenticated %}
-      <a href="{% url 'logout'%}" class="block lg:inline-block lg:mt-0 text-sm hover:text-black mx-4 transition-transform transform hover:scale-110">
-        <div class="flex items-center">
-          <span class="ml-2 text-orange-500"> <!-- Adjust ml-2 according to your desired padding -->
-            Logout
-          </span>
+    <div class="flex flex-col ">
+      <div>
+        <div class=" hidden lg:flex lg:w-auto lg:items-center lg:justify-center lg:mr-14 text-orange-500">
+            <a href="{% url 'index' %}"
+            class="block mt-4 lg:inline-block lg:mt-0 {% if active_page == 'index' %}text-white {% endif %} text-sm hover:text-white mx-4 transition-transform transform hover:scale-110 ">
+            Home
+            </a>
+            <a href="{% url 'whoweare' %}"
+                class="block mt-4 lg:inline-block lg:mt-0 {% if active_page == 'whoweare' %}text-white {% endif %} text-sm hover:text-white mx-4 transition-transform transform hover:scale-110 ">
+                Who we are
+            </a>
+            <a href="{% url 'ourservices' %}"
+                class="block mt-4 lg:inline-block lg:mt-0 {% if active_page == 'ourservices' %}text-white {% endif %} text-sm hover:text-white mx-4 transition-transform transform hover:scale-110 ">
+                Our Services
+            </a>
+            <a href="{% url 'ourproduction' %}"
+                class="block mt-4 lg:inline-block lg:mt-0 {% if active_page == 'ourproduction' %}text-white {% endif %} text-sm hover:text-white mx-4 transition-transform transform hover:scale-110 ">
+                Our Production
+            </a>
+            <a href="{% url 'academy' %}"
+                class="block mt-4 lg:inline-block lg:mt-0 {% if active_page == 'academy' %}text-white {% endif %} text-sm hover:text-white mx-4 transition-transform transform hover:scale-110 ">
+                T-Lab Academy
+            </a>
+            <a href="{% url 'shop' %}" 
+                class="block mt-4 lg:inline-block lg:mt-0 {% if active_page == 'cart' %}text-white {% endif %} text-sm hover:text-white mx-4 transition-transform transform hover:scale-110 ">
+                T-Lab Shop
+            </a>
+            <a href="{% url 'contact' %}"
+                class="block mt-4 lg:inline-block lg:mt-0 {% if active_page == 'contact' %}text-white {% endif %} text-sm hover:text-white mx-4 transition-transform transform hover:scale-110 ">
+                Contact Us
+            </a>
         </div>
-      </a>
-      <a href="{% url 'update_user'%}" class="block lg:inline-block lg:mt-0 text-sm hover:text-black mx-4 transition-transform transform hover:scale-110">
-        <div class="flex items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="rgb(251 146 60)" class="h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-          </svg>
+      </div>
+      <div>
+        <div class=" hidden mt-2 lg:flex lg:w-auto lg:items-center lg:justify-end lg:mr-4  text-orange-500">
+            
+          {% if user.is_authenticated %}
+          <a href="{% url 'logout'%}" class="block lg:inline-block lg:mt-0 text-sm hover:text-black mx-4 transition-transform transform hover:scale-110">
+            <div class="flex items-center">
+              <span class=" text-orange-500"> <!-- Adjust ml-2 according to your desired padding -->
+                
+              </span>
+            </div>
+          </a>
+          <a href="{% url 'update_user'%}" class="block lg:inline-block lg:mt-0 text-sm hover:text-black mx-4 transition-transform transform hover:scale-110">
+            <div class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="rgb(251 146 60)" class="h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+              </svg>
+            </div>
+          </a>
+              {% else %}
+          <a href="{% url 'login'%}" class="block lg:inline-block lg:mt-0 text-sm hover:text-black mx-4 transition-transform transform hover:scale-110">
+            <div class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="rgb(251 146 60)" class="h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+              </svg>
+              <span class=" text-orange-500"> <!-- Adjust ml-2 according to your desired padding -->
+                
+              </span>
+            </div>
+          </a>
+          {% endif %}
+          <a href="{% url 'cart_summary'%}" class="block  pr-10 lg:inline-block lg:mt-0 text-sm hover:text-black mx-4 transition-transform transform hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 40 20" stroke-width="1.5" stroke="rgb(251 146 60)" class="w-8 h-8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+              <rect x="25" y="-3" width="12" height="12" rx="10" fill="rgb(251 146 60)" stroke="rgb(251 146 60)" stroke-width="1.5" />
+              <text x="27" y="8" fill="black" stroke="black" stroke-width="0.5" id="cart_quantity">{{ cart|length }}</text>
+            </svg>
+          </a>
         </div>
-      </a>
-          {% else %}
-      <a href="{% url 'login'%}" class="block lg:inline-block lg:mt-0 text-sm hover:text-black mx-4 transition-transform transform hover:scale-110">
-        <div class="flex items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="rgb(251 146 60)" class="h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-          </svg>
-          <span class="ml-2 text-orange-500"> <!-- Adjust ml-2 according to your desired padding -->
-            Login
-          </span>
-        </div>
-      </a>
-      {% endif %}
-      <a href="{% url 'cart_summary'%}" class="block  pr-10 lg:inline-block lg:mt-0 text-sm hover:text-black mx-4 transition-transform transform hover:scale-110">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 40 20" stroke-width="1.5" stroke="rgb(251 146 60)" class="w-8 h-8">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-          <rect x="25" y="-3" width="12" height="12" rx="10" fill="rgb(251 146 60)" stroke="rgb(251 146 60)" stroke-width="1.5" />
-          <text x="27" y="8" fill="black" stroke="black" stroke-width="0.5" id="cart_quantity">{{ cart|length }}</text>
-        </svg>
-      </a>
-
-      
-      
-    
-
+      </div>
     </div>
     <div class="px-10 block lg:hidden">
       <button id="toggle-btn"
