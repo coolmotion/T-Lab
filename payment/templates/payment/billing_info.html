@@ -1,8 +1,9 @@
 <div class="text-5xl text-white">
+    <p>{{ shipping_info.shipping_full_name }}</p>
     <p>{{ shipping_info.shipping_email }}</p>
     <p>{{ shipping_info.shipping_address1 }}</p>
     <p>{{ shipping_info.shipping_address2 }}</p>
     <p>{{ shipping_info.shipping_city }}</p>
     <p>{{ shipping_info.shipping_zipcode }}</p>
-    
+    <a href="{% url 'pay_now' %}" >Pay now</button>
 </div>
