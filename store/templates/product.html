@@ -4,18 +4,18 @@
 <div class="bg-black py-6">
   <div style="margin-top: 15vh;">   
     <div class="mx-auto m-6 max-w-2xl sm:px-0 lg:grid lg:max-w-full lg:grid-cols-2 lg:gap-x-8 lg:px-8">
-      <div class="px-8 aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3  sm:overflow-hidden sm:rounded-lg">
+      <div class="p-8 aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3  sm:overflow-hidden sm:rounded-lg">
         <img src="{{product.image.url}}" alt="Model wearing plain white basic tee." class="h-full w-full object-fit object-center rounded-lg" />
       </div>
       
-      <div class="px-8 grid grid-cols-1 gap-y-8 text-white">
+      <div class="p-8 rounded-3xl grid grid-cols-1 gap-y-8 bg-zinc-950 text-white">
         <div class="text-xl font-bold">{{product.name}}</div>
         <div class="text-gray-500 text-sm">{{product.description}}</div>
         <form class="mt-0 py-4">
           <div class="grid grid-cols-2 gap-4 mt-0">
               <div class="flex flex-col">
                   <label for="quantity" class="block text-sm font-medium text-gray-100">Quantity</label>
-                  <select id="qty-cart" name="quantity" class="mt-1 block w-full pl-3 pr-10 py-2 text-base text-black border-orange-500 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm rounded-md">
+                  <select id="qty-cart" name="quantity" class="mt-1 block pl-3 pr-10 py-1 text-base text-black border-orange-500 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm rounded-3xl">
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -42,7 +42,7 @@
       
           <div class="mt-6">
               <label for="duration" class="block text-sm font-medium text-gray-100">Duration</label>
-              <select id="duration" name="duration" class="mt-1 block w-full pl-3 pr-10 py-2 text-black border-gray-300 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm rounded-md" disabled>
+              <select id="duration" name="duration" class="mt-1 block  pl-3 pr-10 py-1 text-black focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm rounded-3xl" disabled>
                   <option value="1 week">1 week</option>
                   <option value="2 weeks">2 weeks</option>
                   <option value="1 month">1 month</option>
@@ -50,11 +50,11 @@
                   <option value="6 months">6 months</option>
               </select>
           </div>
-          <div class="flex space-x-2 mt-6">
-            <button type="button" style="opacity: 0.5;" value="{{product.id}}" id="add_to_cart" class="mt-6 flex items-center justify-center rounded-md border border-transparent bg-orange-500 px-8 py-3 text-base font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+          <div class="flex space-x-4 mt-6 justify-center">
+            <button type="button" style="opacity: 0.5;" value="{{product.id}}" id="add_to_cart" class="mt-6 flex items-center justify-center rounded-3xl border border-transparent bg-orange-500 px-4 py-2 text-base font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
               Add to cart
           </button>
-          <button id="rentBtn" class="mt-6 flex items-center justify-center rounded-md border border-transparent bg-orange-500 px-8 py-3 text-base font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" style="opacity: 0.5;" >Rent It Now</button>
+          <button id="rentBtn" class="mt-6 flex items-center justify-center rounded-3xl border border-transparent bg-orange-500 px-4 py-2 text-base font-medium text-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" style="opacity: 0.5;" >Rent It Now</button>
           </div>
         </form>
       </div>

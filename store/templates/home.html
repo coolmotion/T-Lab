@@ -11,11 +11,11 @@
 <div class="container mx-auto" style="padding: 5vh 5vw;">
     <div class="flex flex-col sm:flex-row items-center justify-between p-4">
         <div id="productTabs" class="flex flex-wrap sm:space-x-4 text-white mb-4 sm:mb-0">
-            <a href="{% url 'shop' %}" id="tab1" class="tab-btn  bg-orange-500 text-white rounded-3xl mx-1 px-4 py-1">All Products</a>
-            <a href="{% url 'audio' %}" id="tab2" class="tab-btn px-4 py-1 mx-1 rounded-3xl">Audio</a>
-            <a href="{% url 'video' %}"id="tab3" class="tab-btn px-4 py-1 mx-1 rounded-3xl">Video </a>
-            <a href="{% url 'merchandising' %}" id="tab4" class="tab-btn px-4 py-1 mx-1 rounded-3xl">Merchandising</a>
-            <a href="{% url 'used' %}" id="tab5" class="tab-btn px-4 py-1 mx-1 rounded-3xl">Used</a>
+            <a href="{% url 'shop' %}" id="tab1" class="tab-btn {% if request.path == '/shop/' %}bg-orange-500{% endif %}  text-white rounded-3xl mx-1 px-4 py-1">All Products</a>
+            <a href="{% url 'audio' %}" id="tab2" class="tab-btn {% if request.path == '/shop/audio/' %}bg-orange-500{% endif %} px-4 py-1 mx-1 rounded-3xl">Audio</a>
+            <a href="{% url 'video' %}"id="tab3" class="tab-btn {% if request.path == '/shop/video/' %}bg-orange-500{% endif %} px-4 py-1 mx-1 rounded-3xl">Video </a>
+            <a href="{% url 'merchandising' %}" id="tab4" class="tab-btn {% if request.path == '/shop/merchandising/' %}bg-orange-500{% endif %} px-4 py-1 mx-1 rounded-3xl">Merchandising</a>
+            <a href="{% url 'used' %}" id="tab5" class="tab-btn {% if request.path == '/shop/used/' %}bg-orange-500{% endif %} px-4 py-1 mx-1 rounded-3xl">Used</a>
         </div>
     
         <div class="flex items-center mx-4 ">
