@@ -13,6 +13,26 @@ def home(request):
     return render(request, 'home.html', {"products": products, 'active_page': 'shop'})
 
 
+def home_audio(request):
+    products = Product.objects.filter(category__name='Audio')
+    return render(request, 'home.html', {"products": products, 'active_page': 'shop'})
+
+
+def home_video(request):
+    products = Product.objects.filter(category__name='Video')
+    return render(request, 'home.html', {"products": products, 'active_page': 'shop'})
+
+
+def home_merchandising(request):
+    products = Product.objects.filter(category__name='Merchandising')
+    return render(request, 'home.html', {"products": products, 'active_page': 'shop'})
+
+
+def home_used(request):
+    products = Product.objects.filter(category__name='Used')
+    return render(request, 'home.html', {"products": products, 'active_page': 'shop'})
+
+
 def product(request, pk):
     product = Product.objects.get(id=pk)
     return render(request, 'product.html', {"product": product})

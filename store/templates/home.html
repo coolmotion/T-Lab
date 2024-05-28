@@ -11,11 +11,11 @@
 <div class="container mx-auto" style="padding: 5vh 5vw;">
     <div class="flex flex-col sm:flex-row items-center justify-between p-4">
         <div id="productTabs" class="flex flex-wrap sm:space-x-4 text-white mb-4 sm:mb-0">
-            <div class="tab cursor-pointer bg-orange-500 text-white rounded-full px-4 py-2" onclick="filterProducts('all')">All Products</div>
-            <div class="tab cursor-pointer" onclick="filterProducts('audio')">Audio</div>
-            <div class="tab cursor-pointer" onclick="filterProducts('video')">Video </div>
-            <div class="tab cursor-pointer" onclick="filterProducts('video')">Merchandising</div>
-            <div class="tab cursor-pointer" onclick="filterProducts('video')">Used</div>
+            <a href="{% url 'shop' %}" id="tab1" class="tab-btn  bg-orange-500 text-white rounded-3xl mx-1 px-4 py-1">All Products</a>
+            <a href="{% url 'audio' %}" id="tab2" class="tab-btn px-4 py-1 mx-1 rounded-3xl">Audio</a>
+            <a href="{% url 'video' %}"id="tab3" class="tab-btn px-4 py-1 mx-1 rounded-3xl">Video </a>
+            <a href="{% url 'merchandising' %}" id="tab4" class="tab-btn px-4 py-1 mx-1 rounded-3xl">Merchandising</a>
+            <a href="{% url 'used' %}" id="tab5" class="tab-btn px-4 py-1 mx-1 rounded-3xl">Used</a>
         </div>
     
         <div class="flex items-center mx-4 ">
@@ -23,20 +23,20 @@
             <button id="searchButton" class="ml-2 px-4 py-1 bg-orange-500 text-white rounded-3xl">Search</button>
         </div>
     </div>
-    
-    
-    <div id="productContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8" >
-        {% for product in products %}
-        <div class="bg-zinc-950 p-4 rounded-lg shadow-md mb-4">
-            <div class="w-full bg-white rounded-xl">
-            <img src="{{ product.image.url }}" alt="Product 1" class="w-full h-32 object-contain mb-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8" >
+            {% for product in products %}
+            <div class="bg-zinc-950 p-4 rounded-lg shadow-md mb-4">
+                <div class="w-full bg-white rounded-xl">
+                <img src="{{ product.image.url }}" alt="Product 1" class="w-full h-32 object-contain mb-4">
+                </div>
+                <h3 class="text-md text-gray-200 ">{{ product.name }}</h3>
+                <p class="text-orange-200 px-2 text-sm mt-4 pb-4">RS {{ product.price }}</p>
+                <a href="{% url 'product' product.id%}" class=" bg-orange-500 text-white text-sm rounded-full px-4 py-2 mt-4">More Details</a>
             </div>
-            <h3 class="text-md text-gray-200 ">{{ product.name }}</h3>
-            <p class="text-orange-200 px-2 text-sm mt-4 pb-4">RS {{ product.price }}</p>
-            <a href="{% url 'product' product.id%}" class=" bg-orange-500 text-white text-sm rounded-full px-4 py-2 mt-4">More Details</a>
+            {% endfor %}
+            
         </div>
-        {% endfor %}
     </div>
-    
 </div>
+
 {% endblock %}

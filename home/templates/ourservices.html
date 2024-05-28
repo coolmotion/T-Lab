@@ -2,13 +2,13 @@
 {% load static%}
 {% block content %}
 <div class="animated-text">
-  <h2 class="text-5xl font-bold text-white text-center pt-20 pb-10">Services</h2>
+  <h2 class="text-5xl font-bold text-white text-center pt-20 pb-10" id="recording">Services</h2>
 </div>
 <div>
   <div class="flex flex-col md:flex-row border-b border-orange-500" style="padding:0 5vw;">
     <!-- First Column -->
     <div class="animated-text md:w-1/2 custom-padding px-8 py-6 bg-black">
-      <section id="composing" class="">
+      <section class="">
         <h3 class="text-2xl font-bold text-gray-200 mb-5 ">Trusted audio recording services</h3>
         <p class="text-gray-500 pb-6">T-lab production house is the proud home to 2 state-of–the-art sound recording studios which are managed by a professional team of sound engineers.
         </p>
@@ -43,6 +43,7 @@
     <div class=" animated-text flex-col md:w-1/2 custom-padding px-8 py-6 flex justify-center">
       <div class="image-container">
         <img src="{% static 'img/recording.png' %}" alt="Music Composing Image" class="rounded-lg ">
+        <div id="composing"></div>
       </div>
     </div>
   </div>
@@ -91,6 +92,7 @@
     <div class="animated-text">
       <div class="image-container">
         <img src="{% static 'img/mixing.png' %}"  alt="Mixing and Mastering Image" class="rounded-lg">
+        <div id="video"></div>
       </div>
     </div>
     
@@ -99,8 +101,8 @@
 
 <div class="flex flex-col md:flex-row border-b border-orange-500" style="padding:0 5vw;">
   <!-- First Column -->
-  <div class="animated-text md:w-1/2 custom-padding px-8 py-6 bg-black">
-    <section id="production">
+  <div class="animated-text md:w-1/2 custom-padding px-8 py-6">
+    <section class="">
       <div class="animated-text">
         <h3 class="text-2xl font-bold text-gray-200 mb-5 ">Video production services</h3>
         <p class="text-gray-500 pb-6">T-lab production house not only offers a variety of services for audio productions but, we also offer a variety of services for video productions. </p>
@@ -124,7 +126,7 @@
           </ul>
         </div>        
       </div>
-      <div class="flex items-center justify-center p-8">
+      <div class="flex items-center justify-center p-7 ">
         <a href="https://wa.link/3spd48"
           class="m-2 inline-block px-8 py-2 font-semibold text-white bg-orange-600 hover:bg-orange-700 rounded-3xl">
           Chat now</a>
