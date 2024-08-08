@@ -51,16 +51,16 @@
             <p class="text-sm text-black text-left p-4">There is nothing in the cart</p>
            {% endif %}
         </div>
-        <div class="w-full md:w-1/4 bg-gray-100 rounded-xl p-4 mb-4 " style="height: fit-content;">
-          <h2 class="text-xl font-semibold m-4 text-black">Order Summary</h2>
-          <div class="border border-gray-400 rounded-md p-4">
-            <div class="flex justify-between mb-2 text-gray-900">
+        <div class="w-full md:w-1/4 bg-zinc-900 rounded-xl p-4 mb-4 " style="height: fit-content;">
+          <h2 class="text-xl font-semibold m-4 text-white">Order Summary</h2>
+          <div class="border border-gray-800 rounded-md p-4">
+            <div class="flex justify-between mb-2 text-gray-100">
               <span>Items</span>
               <span></span>
             </div>
-            <hr class="my-2">
+            <!-- <hr class="my-2 text-black"> -->
             {% for product in cart_products %}
-            <div class="flex justify-between mb-2 text-gray-600 text-xs">
+            <div class="flex justify-between mb-2 text-gray-400 text-xs">
               <span>{{product.name}}
 
               </span>
@@ -71,12 +71,12 @@
                 {% endfor %}Rs{{product.price}}</span>
             </div>
             {% endfor %}
-            <hr class="my-2">
-            <div class="flex justify-between mb-2 text-gray-900">
+            <!-- <hr class="my-2"> -->
+            <div class="flex justify-between mb-2 text-gray-100">
               <span>Subtotal</span>
               <span>Rs {{total}}</span>
             </div>
-            <div class="flex justify-between mb-2 text-gray-900">
+            <div class="flex justify-between mb-2 text-gray-100">
               <span>Shipping</span>
               <span>N/A</span>
             </div>
@@ -84,8 +84,8 @@
               <span>Discount</span>
               <span>-$0.00</span>
             </div>
-            <hr class="my-2">
-            <div class="flex justify-between font-semibold text-sm text-black">
+            <!-- <hr class="my-2"> -->
+            <div class="flex justify-between font-semibold text-sm text-white">
               <span>Total</span>
               <span>Rs {{total}}</span>
             </div>
